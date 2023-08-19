@@ -1,0 +1,41 @@
+footer {
+	
+	background: #212F5B;
+	
+}
+.letra-roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.bn-color{
+    background-color: #212F5B;
+}
+.wsp-color{
+    color: green;
+}
+.letra1{
+    color: #EFB048;
+}
+.letra2{
+    color: black;   
+}
+.info1{
+    background-color: #EDEDED;
+    padding-top: 30px;
+
+
+     
+}
+.pd-tamaño{
+    padding-bottom: 30px;;
+}
+.icono-tamaño{
+    font-size: 35px;
+    
+}
+.tratamiento{
+    background-color: #EDEDED;
+}
+.tratamiento-letra{
+    color: #212F5B;
+
+}
