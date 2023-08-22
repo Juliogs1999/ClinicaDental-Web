@@ -1,6 +1,6 @@
 footer {
 	
-	background: #212F5B;
+	background: #0F1B40;
 	
 }
 .letra-roboto{
@@ -38,4 +38,8 @@ footer {
 .tratamiento-letra{
     color: #212F5B;
 
+}
+.vertical-line{
+    border-left: 3px solid white;
+    height: 100%;
 }
