@@ -18,9 +18,10 @@ footer {
 .letra2{
     color: black;   
 }
-.info1{
+body{
     background-color: #EDEDED;
-    
+    padding-left: 15px;
+    padding-right: 15px;
 
 
      
@@ -42,4 +43,32 @@ footer {
 .vertical-line{
     border-left: 3px solid white;
     height: 100%;
+}
+.posicionado{
+    position: absolute;
+   
+
+}
+.relativo{
+    position: relative;
+    
+    top: 15%;
+    left: 13px;
+
+}
+#diferentes{
+    background-color: white;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    padding-bottom: 20px; 
+}
+#paciente{
+    background-color: white;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding-top: 20px;
+}
+#tratamiento{
+    padding-top: 40px;
+    padding-bottom: 40px;
 }

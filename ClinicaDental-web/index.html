@@ -17,9 +17,9 @@
     
 
      <!--COMIENZO DE PRIMERA BARRA DE NAVEGACION DE LOGO-->
-     <nav class="navbar bg-body-tertiary">
+     <nav class="navbar bg-body-tertiary ">
         <div class="container-fluid">
-          <a class="navbar-brand"><img  src="img/logoSmiley.png" alt="" class="img-fluid"></a>
+          <a class="navbar-brand"><img  src="img/logoSmiley.png" alt="" class="" height="105"></a>
 
           <ul class="nav justify-content-center">
             
@@ -85,16 +85,42 @@
       
     
     <!--Imagen Grande-->
-    <div class="card text-bg-dark letra-roboto">
-        <img src="img/fondochica.jpg" class="img-fluid" alt="...">
-        <div class="card-img-overlay row justify-content-evenly align-items-start">
-            <div class="col-md-9 mt-2"> <!-- Utilizamos "col-md-9" para pantallas medianas y más grandes -->
-                <h1 class="card-title text-dark" style="font-size: 4vw;"><strong>Tu </strong><strong class="letra1">SONRISA </strong><br><strong>lo dice todo</strong></h1>
-                <p class="text-dark" style="font-size: 2vw;">Clínica Dental Smiley es mucho más que 
-                    <br>una clínica dental convencional. </p>
-            </div>
+    <div id="carouselExampleIndicators" class="carousel slide ">
+        <div class="carousel-indicators ">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </div>
+        <div class="carousel-inner ">
+          <div class="carousel-item active ">
+            <img src="img/fondochica.jpg" class="d-block w-100 img-fluid " alt="..."> 
+            <div class="card-img-overlay row justify-content-evenly ">
+              <div class="col-md-9 relativo"> 
+                <div class="posicionado row"><!-- Utilizamos "col-md-9" para pantallas medianas y más grandes -->
+                  <h1 class="card-title text-dark" style="font-size: 4vw;"><strong>Tu </strong><strong class="letra1">SONRISA </strong><br><strong>lo dice todo</strong></h1>
+                  <p class="text-dark" style="font-size: 2vw;">Clínica Dental Smiley es mucho más que 
+                      <br>una clínica dental convencional. </p>
+                    </div>
+              </div>
+          </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
     
     
     <!--INFORMACION DE CONTACTO Y HORARIOS-->
@@ -125,7 +151,7 @@
           </div>
     </div>
     <!--QUE NOS HACE DIFERENTE-->
-    <div class="text-center letra-roboto">
+    <div class="text-center letra-roboto" id="diferentes">
         <div class="row justify-content-evenly align-items-center">
           <div class="col-md-4">
            <img src="img/sonrisa2.png" alt="" class="img-fluid">
@@ -198,7 +224,7 @@
       </div>
       
       <!--PACIENTES SATISFECHOS-->
-      <div class="container text-center letra-roboto" id="paciente">
+      <div class=" text-center letra-roboto" id="paciente">
         <div class="container">
             <div class="row mt-5 align-items-center">
                 <div class="col-md-6 align-bottom">
