@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinica Dental</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -15,60 +14,81 @@
 
 </head>
 <body>
-    <div class="">
-        <div class="">
-        <!--COMIENZO DE PRIMERA BARRA DE NAVEGACION DE LOGO-->
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand">
-                <img src="img/logoSmiley.png" class="img-fluid">
-            | </a>
-            <form class="d-flex" role="search">
-                <a type="button" class="btn btn-warning text-dark rounded-pill my-2" href="https://api.whatsapp.com/send?phone=51946455607">
-                    <i class="bi bi-whatsapp wsp-color letra-roboto"></i> <strong>Reservar Cita</strong>
-                </a>
-                
-            </form>
-            </div>
-        </nav>
-        <!--SEGUNDA BARRA DE NAVEGACION-->
-        <nav class="navbar navbar-expand-lg bn-color letra-roboto">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse container-fluid" id="navbarNav">
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white mx-4" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#tratamiento">Tratamiento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#paciente">Galeria de Sonrisas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#"><i class="bi bi-search"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white mx-4" href="#">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-    </div>
+    
+
+     <!--COMIENZO DE PRIMERA BARRA DE NAVEGACION DE LOGO-->
+     <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand"><img  src="img/logoSmiley.png" alt="" class="img-fluid"></a>
+
+          <ul class="nav justify-content-center">
+            
+            <li class="nav-item">
+              <a class="nav-link tratamiento-letra" href="#"><i class="bi bi-telephone-fill text-warning"></i> <strong>946 455 607</strong> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tratamiento-letra" href="#"><i class="bi bi-envelope-fill text-warning"></i> <strong>Consultoriasmiley@gmail.com</strong></i></a>
+            </li>
+           
+          </ul>
+
+          <form class="d-flex" role="search">
+            <a type="button" class="btn btn-warning text-dark rounded-pill my-2" href="https://api.whatsapp.com/send?phone=51946455607">
+                <i class="bi bi-whatsapp wsp-color letra-roboto"></i> <strong>Reservar Cita</strong>
+            </a>
+            
+        </form>
+        </div>
+      </nav>
+    
+
+    
+     <!--SEGUNDA BARRA DE NAVEGACION-->
+
+    
+     <nav class="navbar navbar-expand-lg bn-color" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" >
+            <ul class="navbar-nav justify-content-center ">
+              <li class="nav-item">
+                <a class="nav-link mx-4" href="#">Home</a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link  mx-4" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  mx-4" href="#tratamiento">Tratamiento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-4" href="#paciente">Galeria de Sonrisas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  mx-4" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  mx-4" href="#"><i class="bi bi-search"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-4" href="#">Contacto</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    
+
+      
+    
     <!--Imagen Grande-->
     <div class="card text-bg-dark letra-roboto">
         <img src="img/fondochica.jpg" class="img-fluid" alt="...">
-        <div class="card-img-overlay row justify-content-evenly align-items-center">
-            <div class="col-md-9"> <!-- Utilizamos "col-md-9" para pantallas medianas y más grandes -->
+        <div class="card-img-overlay row justify-content-evenly align-items-start">
+            <div class="col-md-9 mt-2"> <!-- Utilizamos "col-md-9" para pantallas medianas y más grandes -->
                 <h1 class="card-title text-dark" style="font-size: 4vw;"><strong>Tu </strong><strong class="letra1">SONRISA </strong><br><strong>lo dice todo</strong></h1>
                 <p class="text-dark" style="font-size: 2vw;">Clínica Dental Smiley es mucho más que 
                     <br>una clínica dental convencional. </p>
@@ -78,25 +98,25 @@
     
     
     <!--INFORMACION DE CONTACTO Y HORARIOS-->
-    <div class="info1 letra-roboto">
-        <div class="container text-center info2">
-            <div class="row align-self-center">
-              <div class="col">
+    <div class="info1 letra-roboto pt-5">
+        <div class="container text-center">
+            <div class="row justify-content-evenly align-self-center">
+              <div class="col-3">
                 <i class="bi bi-clock icono-tamaño"></i>
                 <p><strong>Horario</strong></p>
-                <p class="pd-tamaño">Lunes a Sabado <br>10am - 7pm</p>
+                <p class="pd-tamaño" >Lunes a Sabado <br>10am - 7pm</p>
               </div>
-              <div class="col">
+              <div class="col-3">
                 <i class="bi bi-telephone icono-tamaño"></i>
                 <p><strong>Llámanos</strong></p>
                 <p>Móvil 946 455 607 <br>Móvil 981 159 030</p>
               </div>
-              <div class="col">
+              <div class="col-3">
                 <i class="bi bi-whatsapp icono-tamaño"></i>
                 <p><strong>Escribenos</strong></p>
                 <p>Mandanos un Whatsapp al <br>Escribenos</p>
               </div>
-              <div class="col">
+              <div class="col-3">
                 <i class="bi bi-geo-alt icono-tamaño"></i>
                 <p><strong>Visítanos</strong></p>
                 <p>Marfin 1301 <br>Lima-Los Olivos</p>
@@ -107,10 +127,10 @@
     <!--QUE NOS HACE DIFERENTE-->
     <div class="text-center letra-roboto">
         <div class="row justify-content-evenly align-items-center">
-          <div class="col-4">
+          <div class="col-md-4">
            <img src="img/sonrisa2.png" alt="" class="img-fluid">
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             
                 <div class=" letra-roboto">
                   <h2><strong>¿Que nos hace diferente?</strong></h2>
@@ -181,7 +201,7 @@
       <div class="container text-center letra-roboto" id="paciente">
         <div class="container">
             <div class="row mt-5 align-items-center">
-                <div class="col align-bottom">
+                <div class="col-md-6 align-bottom">
                     <h2 class="tratamiento-letra"><strong>Pacientes Satisfechos</strong></h2>
                     <br>
                     <p>Sentirse bien cuando sonríes es un verdadero activo. En Odentid, la odontología cosmética 
@@ -190,7 +210,7 @@
                         Tráiganos sus inquietudes y nuestros doctores pueden trazar el curso de su sonrisa ideal.</p>
                     <a href="#" class="btn btn-outline-primary">Ver Más</a>
                 </div>
-                <div class="col mb-5">
+                <div class="col-md-6 mb-5">
                     <picture>
                         <img src="img/niña.png" class="img-fluid" alt="...">
                     </picture>
@@ -238,9 +258,10 @@
 
     
     <footer class="container-fluid text-center text-white">@2023 Todos los derechos reservado | Consultorio Odontológico Smiley</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
