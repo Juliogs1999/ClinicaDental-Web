@@ -40,10 +40,8 @@ body{
     color: #212F5B;
 
 }
-.vertical-line{
-    border-left: 3px solid white;
-    height: 100%;
-}
+
+
 .posicionado{
     position: absolute;
    
@@ -72,3 +70,4 @@ body{
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
