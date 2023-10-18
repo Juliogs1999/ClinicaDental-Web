@@ -36,10 +36,7 @@ body{
 .tratamiento{
     background-color: #EDEDED;
 }
-.tratamiento-letra{
-    color: #212F5B;
 
-}
 
 
 .posicionado{
@@ -76,3 +73,16 @@ body{
 .ml-nosotros{
     margin-left: 7%;
 }
+#recomendacion{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image: url(img/FONDO.png);
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   
+    }
