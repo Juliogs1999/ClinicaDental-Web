@@ -74,9 +74,10 @@ body{
     margin-left: 7%;
 }
 #recomendacion{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-image: url(img/FONDO.png);
+    background-color: #E5E9F6;
+    
+    
+    background-image: url(img/FONDO-DIFICIL.jpg);
     background-image: no-repeat;
     background-image: fixed;
     background-image: center;
@@ -84,5 +85,13 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-   
+
     }
+
+#contenedorC{
+    position: absolute;
+}
+#c{
+    position: relative;
+    left: 30px;
+}
