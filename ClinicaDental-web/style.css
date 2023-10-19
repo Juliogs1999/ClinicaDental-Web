@@ -88,10 +88,9 @@ body{
 
     }
 
-#contenedorC{
-    position: absolute;
-}
-#c{
-    position: relative;
-    left: 30px;
+.circulo{
+    margin-top: -75px;
+    
+
+    
 }
