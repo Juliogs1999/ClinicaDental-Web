@@ -356,49 +356,59 @@
     <div class="row">
       <div class="col 3" > <img class="img-fluid" src="img/conta-azul.png" alt=""></div>
       <div class="col-7">
-        <h1 class="text-center  pt-5"><strong>CONTACTANOS</strong></h1>
+        <h1 class=" pt-3"><strong>Contáctanos</strong></h1>
+        <h4>Ingrese sus datos en los campos seleccionados y nos <br> pondremos en contacto con usted.</h4>
         <form class="row g-3">
           <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <label for="validationDefault01" class="form-label"></label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="Nombres">
           </div>
           <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-          </div>
-          <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <label for="validationDefault02" class="form-label"></label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Apellidos">
           </div>
           <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
+            <label for="validationDefault03" class="form-label"></label>
+            <input type="text" class="form-control" id="validationDefault03" placeholder="Teléfono">
           </div>
-          <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label"></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo Electronico">
+          </div>
+          
+          <div class="pt-4 col-md-12">
+            
+            <select class="form-select" aria-label="Default select example">
+              <option selected disabled value="">Especialidades</option>
+              <option value="1">Ortodoncia</option>
+              <option value="2">Endodoncia</option>
+              <option value="3">Protesis</option>
             </select>
           </div>
-          <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+          <div class="col-md-6">
+            <label for="validationDefault05" class="form-label"></label>
+            <input type="text" class="form-control" id="validationDefault05" placeholder="Calendario">
           </div>
-          <div class="col-12">
+          <div class="col-md-6">
+            <label for="validationDefault06" class="form-label"></label>
+            <input type="text" class="form-control" id="validationDefault06" placeholder="Horario">
+          </div>
+          <div class=" pt-4 col-md-12">
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Nota para el Doctor</label>
+            </div>
+          </div>
+          <div class="col-md-12">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Acepto las Condiciones para el Tratamiento de Datos Personales
               </label>
             </div>
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+          <div class="d-grid col-4 mx-auto">
+            <button type="submit" class="btn btn-outline-warning rounded-pill" style="color: #212F5B;"><strong>Envíar</strong></button>
           </div>
         </form>
       </div>
