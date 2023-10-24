@@ -356,7 +356,7 @@
     <div class="row">
       <div class="col 3" > <img class="img-fluid" src="img/conta-azul.png" alt=""></div>
       <div class="col-7">
-        <h1 class=" pt-3"><strong>Contáctanos</strong></h1>
+        <h1><strong>Contáctanos</strong></h1>
         <h4>Ingrese sus datos en los campos seleccionados y nos <br> pondremos en contacto con usted.</h4>
         <form class="row g-3">
           <div class="col-md-6">
@@ -386,13 +386,18 @@
             </select>
           </div>
           <div class="col-md-6">
-            <label for="validationDefault05" class="form-label"></label>
-            <input type="text" class="form-control" id="validationDefault05" placeholder="Calendario">
+            <label for="calendario" class="form-label"></label>
+            <input type="date" class="form-control" id="calendario" name="calendario">
           </div>
+          
           <div class="col-md-6">
-            <label for="validationDefault06" class="form-label"></label>
-            <input type="text" class="form-control" id="validationDefault06" placeholder="Horario">
+            <div class="form-group">
+              <label for="horario">Horario:</label>
+              <input type="text" class="form-control" id="horario" name="horario" readonly>
+              <button type="button" class="btn btn-primary" id="seleccionarHorario">Seleccionar Horario</button>
+            </div>
           </div>
+          
           <div class=" pt-4 col-md-12">
             <div class="form-floating">
               <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
