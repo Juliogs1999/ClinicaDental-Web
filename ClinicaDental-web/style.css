@@ -91,6 +91,10 @@ body{
 .circulo{
     margin-top: -75px;
     
-
     
+}
+.style-card{
+    background-color: #EDEDED;
+     border: none; 
+     
 }
