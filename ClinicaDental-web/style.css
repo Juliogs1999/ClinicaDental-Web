@@ -98,3 +98,13 @@ body{
      border: none; 
      
 }
+.border-card{
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.5);
+
+}
+#NuestrosEspecialistas{
+    background-color: white
+    
+}
