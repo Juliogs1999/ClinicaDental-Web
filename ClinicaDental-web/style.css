@@ -3,6 +3,7 @@ footer {
 	background: #0F1B40;
 	
 }
+
 .letra-roboto{
     font-family: 'Roboto', sans-serif;
 }
@@ -17,6 +18,12 @@ footer {
 }
 .letra1{
     color: #EFB048;
+    
+    
+}
+.icono-color{
+    color: #EFB048;
+    font-size: 25px;
 }
 .letra2{
     color: black;   
@@ -58,13 +65,15 @@ body{
     background-color: white;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
-    padding-bottom: 20px; 
+    padding-top: 60px;
+    padding-bottom: 40px; 
 }
 #paciente{
     background-color: white;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    padding-top: 20px;
+    padding-top: 100px;
+    padding-bottom: 70px; 
 }
 #tratamiento{
     padding-top: 40px;
@@ -96,6 +105,17 @@ body{
     
     
 }
+.circle {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido del círculo */
+    justify-content: center; /* Centra horizontalmente el contenido del círculo */
+    width: 40px; /* Ajusta el tamaño del círculo según tus preferencias */
+    height: 40px;
+    margin-right: 1px; /* Espacio entre el círculo y el ícono */
+    border: 2px solid #EFB048; /* Ancho y color de la línea circular */
+    border-radius: 50%; /* Esto hace que el círculo sea circular */
+    padding: 1px; 
+}
 .style-card{
     background-color: #EDEDED;
      border: none; 
@@ -112,6 +132,20 @@ body{
     box-shadow: 5px 8px 10px 2px rgba(0, 0, 0, 0.5);
 }
 #NuestrosEspecialistas{
-    background-color: white
+    background-color: white;
     
 }
+u{
+    text-decoration: underline;
+    text-decoration-color: #EFB048;
+    text-decoration-skip-ink: auto; /* Permite el control del espacio entre el subrayado y el texto */
+    text-underline-offset: 10px;
+}
+.vr {
+    width: 4px; /* Ancho de la línea vertical */
+    height: 85%; /* Tamaño completo de la columna */
+    background-color: #EFB048; /* Color de la línea vertical */
+    margin-right: 30px; /* Espacio entre la línea y el contenido */
+}
+  
+  

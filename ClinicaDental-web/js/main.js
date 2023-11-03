@@ -20,5 +20,16 @@ $(function () {
             });
     });
 
+    $("#item-menu-galeriadesonrisas").click(function (e) {
+        e.preventDefault();
+        fetch('./galeriadesonrisas.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
+
     
 });
