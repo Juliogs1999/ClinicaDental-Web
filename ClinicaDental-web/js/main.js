@@ -31,5 +31,16 @@ $(function () {
             });
     });
 
+    $("#item-menu-blog").click(function (e) {
+        e.preventDefault();
+        fetch('./blog.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
+
     
 });
