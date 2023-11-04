@@ -9,7 +9,29 @@ $(function () {
                 $("#main-content").html(datoshtml);
             });
     });
+    $("#item-menu-nosotros2").click(function (e) {
+        e.preventDefault();
+        fetch('./nosotros.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
+
     $("#item-menu-tratamiento").click(function (e) {
+        e.preventDefault();
+        fetch('./tratamiento.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
+
+    $("#item-menu-tratamiento2").click(function (e) {
         e.preventDefault();
         fetch('./tratamiento.html')
             .then(function (response) {
@@ -30,6 +52,16 @@ $(function () {
                 $("#main-content").html(datoshtml);
             });
     });
+    $("#item-menu-galeriadesonrisas2").click(function (e) {
+        e.preventDefault();
+        fetch('./galeriadesonrisas.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
 
     $("#item-menu-blog").click(function (e) {
         e.preventDefault();
@@ -41,6 +73,18 @@ $(function () {
                 $("#main-content").html(datoshtml);
             });
     });
+    $("#item-menu-blog2").click(function (e) {
+        e.preventDefault();
+        fetch('./blog.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+            });
+    });
+
+    
 
     
 });
