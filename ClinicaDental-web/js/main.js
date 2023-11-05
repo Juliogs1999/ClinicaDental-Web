@@ -11,14 +11,23 @@ $(function () {
     });
     $("#item-menu-nosotros2").click(function (e) {
         e.preventDefault();
+    
+        // Cargar la página "nosotros.html" en el contenedor principal
         fetch('./nosotros.html')
             .then(function (response) {
                 return response.text();
             })
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
+                $("#item-menu-nosotros").addClass("active");
+                
+                // Quitar la clase "active" del botón "Home"
+                $("#item-menu-home").removeClass("active");
             });
     });
+    
+    
+    
 
     $("#item-menu-tratamiento").click(function (e) {
         e.preventDefault();
@@ -39,6 +48,9 @@ $(function () {
             })
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
+                $("#item-menu-tratamiento").addClass("active");
+                 // Quitar la clase "active" del botón "Home"
+                 $("#item-menu-home").removeClass("active");
             });
     });
 
@@ -60,6 +72,9 @@ $(function () {
             })
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
+                $("#item-menu-galeriadesonrisas").addClass("active");
+                 // Quitar la clase "active" del botón "Home"
+                 $("#item-menu-home").removeClass("active");
             });
     });
 
@@ -71,6 +86,7 @@ $(function () {
             })
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
+                
             });
     });
     $("#item-menu-blog2").click(function (e) {
@@ -81,6 +97,9 @@ $(function () {
             })
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
+                $("#item-menu-blog").addClass("active");
+                 // Quitar la clase "active" del botón "Home"
+                 $("#item-menu-home").removeClass("active");
             });
     });
 
