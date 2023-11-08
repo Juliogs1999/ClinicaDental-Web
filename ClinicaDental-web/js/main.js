@@ -103,6 +103,18 @@ $(function () {
             });
     });
 
+    $("#item-menu-contacto").click(function (e) {
+        e.preventDefault();
+        fetch('./contacto.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+                
+            });
+    });
+
     $("#item-menu-nosotros3").click(function (e) {
         e.preventDefault();
     
@@ -158,6 +170,20 @@ $(function () {
             .then(function (datoshtml) {
                 $("#main-content").html(datoshtml);
                 $("#item-menu-blog").addClass("active");
+                 // Quitar la clase "active" del botón "Home"
+                 $("#item-menu-home").removeClass("active");
+            });
+    });
+
+    $("#item-menu-contacto2").click(function (e) {
+        e.preventDefault();
+        fetch('./contacto.html')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+                $("#item-menu-contacto").addClass("active");
                  // Quitar la clase "active" del botón "Home"
                  $("#item-menu-home").removeClass("active");
             });
