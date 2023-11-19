@@ -1,5 +1,41 @@
 $(function () {
-    $("#item-menu-nosotros").click(function (e) {
+
+    const menusPagina = [
+        ["#item-menu-nosotros", "./nosotros.html"],//barra de navegacion
+        ["#item-menu-tratamiento","./tratamiento.html"],
+        ["#item-menu-galeriadesonrisas","./galeriadesonrisas.html"],
+        ["#item-menu-blog","./blog.html"],
+        ["#item-menu-contacto","./contacto.html"],
+        ["#item-menu-nosotros2", "./nosotros.html","#item-menu-nosotros"],//botones
+        ["#item-menu-tratamiento2","./tratamiento.html","#item-menu-tratamiento"],
+        ["#item-menu-galeriadesonrisas2","./galeriadesonrisas.html","#item-menu-galeriadesonrisas"],
+        ["#item-menu-blog2","./blog.html","#item-menu-blog"],
+        ["#item-menu-contacto2","./contacto.html","#item-menu-contacto"],
+        ["#item-menu-nosotros3","./nosotros.html","#item-menu-nosotros"],
+        ["#item-menu-tratamiento3","./tratamiento.html","#item-menu-tratamiento"],
+        ["#item-menu-galeriadesonrisas3","./galeriadesonrisas.html","#item-menu-galeriadesonrisas"],
+        ["#item-menu-blog3","./blog.html","#item-menu-blog"],
+        
+];
+
+menusPagina.map(item =>{
+    $(item[0]).click(function (e) {
+        e.preventDefault();
+        fetch(item[1])
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (datoshtml) {
+                $("#main-content").html(datoshtml);
+                $(item[2]).addClass("active");
+                
+                // Quitar la clase "active" del botón "Home"
+                $("#item-menu-home").removeClass("active");
+            });
+    });
+})
+
+    /*$("#item-menu-nosotros").click(function (e) {
         e.preventDefault();
         fetch('./nosotros.html')
             .then(function (response) {
@@ -78,7 +114,7 @@ $(function () {
             });
     });
 
-    $("#item-menu-blog").click(function (e) {
+    /*$("#item-menu-blog").click(function (e) {
         e.preventDefault();
         fetch('./blog.html')
             .then(function (response) {
@@ -103,7 +139,7 @@ $(function () {
             });
     });
 
-    $("#item-menu-contacto").click(function (e) {
+   $("#item-menu-contacto").click(function (e) {
         e.preventDefault();
         fetch('./contacto.html')
             .then(function (response) {
@@ -175,7 +211,7 @@ $(function () {
             });
     });
 
-    $("#item-menu-contacto2").click(function (e) {
+    /*$("#item-menu-contacto2").click(function (e) {
         e.preventDefault();
         fetch('./contacto.html')
             .then(function (response) {
@@ -187,7 +223,7 @@ $(function () {
                  // Quitar la clase "active" del botón "Home"
                  $("#item-menu-home").removeClass("active");
             });
-    });
+    });*/
 
     // Obtén una lista de todos los elementos con la clase "nav-link"
 // Obtén una lista de todos los elementos con la clase "nav-link"
@@ -205,5 +241,6 @@ navLinks.forEach(function(navLink) {
     this.classList.add('active');
   });
 });
+
     
 });

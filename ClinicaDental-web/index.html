@@ -403,9 +403,9 @@
         <div class="row">
           <div class="col-md-6 col-12">
 
-            <label for="validationDefault01" class="form-label"></label>
+            <label for="txtApellido" class="form-label"></label>
             <div class="input-group">
-                <input type="text" class="form-control" id="validationDefault01" placeholder="Nombres">
+                <input type="text" class="form-control" id="txtNombre" placeholder="Nombres">
                 <span class="input-group-text">
                   <i class="bi bi-person-fill text-warning"></i>
                 </span>
@@ -414,18 +414,18 @@
           </div>
 
           <div class="col-md-6 col-12">
-            <label for="validationDefault02" class="form-label"></label>
+            <label for="txtApellido" class="form-label"></label>
             <div class="input-group">
-                <input type="text" class="form-control" id="validationDefault02" placeholder="Apellidos">
+                <input type="text" class="form-control" id="txtApellido" placeholder="Apellidos">
                 <span class="input-group-text">
                    <i class="bi bi-person-fill text-warning"></i>
                 </span>
             </div>
           </div>
           <div class="col-md-6 col-12">
-            <label for="validationDefault03" class="form-label"></label>
+            <label for="txtTelefono" class="form-label"></label>
             <div class="input-group">
-              <input type="number" class="form-control" id="validationDefault03" placeholder="Teléfono">
+              <input type="number" class="form-control" id="txtTelefono" placeholder="Teléfono">
               <span class="input-group-text">
                 <i class="bi bi-telephone-fill text-warning"></i>
               </span>
@@ -433,9 +433,9 @@
             
           </div>
           <div class="col-md-6 col-12">
-            <label for="exampleFormControlInput1" class="form-label"></label>
+            <label for="txtCorreo" class="form-label"></label>
             <div class="input-group">
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo Electronico">
+              <input type="email" class="form-control" id="txtCorreo" placeholder="Correo Electronico">
               <span class="input-group-text">
                 <i class="bi bi-envelope-fill text-warning"></i>
               </span>
@@ -492,7 +492,7 @@
             </div>
           </div>
           <div class="d-grid col-4 mx-auto">
-            <button type="submit" class="btn btn-warning btn-azul"><strong>Envíar</strong></button>
+            <button class="btn btn-warning btn-azul" id="btnAgregarPaciente"><strong>Reservar</strong></button>
           </div>
         </div>
       </div>
@@ -505,6 +505,78 @@
 
     </main>
     
+    <div class="container">
+      <h2>Reservas</h2>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <!--<th>Telefono</th>
+            <th>Correo</th>-->
+            <th></th>
+            <th></th>
+            
+            
+          </tr>
+        </thead>
+    
+        <tbody id="tbody-paciente">
+            
+        </tbody>
+    
+      </table>
+    </div>
+
+    <div class="modal fade" id="modal-actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Paciente</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           
+              
+              <div class="mb-3">   
+                
+                
+              
+                    <input type="text" class="form-control" id="txtIdpacienteActualizar" readonly>
+                    
+               
+    
+              </div>
+              
+              <div class="mb-3">
+
+               
+                    <input type="text" class="form-control" id="txtNombreActualizar" placeholder="Nombres">
+                    
+               
+    
+              </div>
+  
+              <div class="mb-3">
+                
+                
+                    <input type="text" class="form-control" id="txtApellidoActualizar" placeholder="Apellidos">
+               
+              </div>
+              
+
+          </div>
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizar">Actualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
      <!--FOOOTER PRINCIPAL-->
      <div class="pb-4" style="background-color: #212F5B;">
         <div class="container">
@@ -589,9 +661,9 @@
     
     <footer class="container-fluid text-center text-white">@2023 Todos los derechos reservado | Consultorio Odontológico Smiley</footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       $(function () {
@@ -600,17 +672,9 @@
       })
     </script>
     <script src="js/main.js"></script>
-    <script>
-      // Obtener el campo de entrada
-      var telefonoInput = document.getElementById("validationDefault03");
+    <script src="js/paciente.js"></script>
     
-      // Escuchar el evento "input" para validar la longitud
-      telefonoInput.addEventListener("input", function() {
-        if (telefonoInput.value.length > 9) {
-          telefonoInput.value = telefonoInput.value.slice(0, 9); // Limitar a 9 caracteres
-        }
-      });
-    </script>
+    
     
 </body>
 </html>

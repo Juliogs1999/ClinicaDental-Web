@@ -3,6 +3,9 @@ footer {
 	background: #0F1B40;
 	
 }
+.boton-eliminar, .boton-actualizar{
+    cursor: pointer;
+}
 
 .letra-roboto{
     font-family: 'Roboto', sans-serif;
