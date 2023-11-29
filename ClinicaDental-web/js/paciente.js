@@ -40,17 +40,17 @@ leerDatos();
         $("#tbody-paciente").html("");
         $(datos).each((index,value) => {
             var fila = "<tr>";
-            fila += "<td>" + value.idpaciente + "</td>";
-            fila += "<td>" + value.nompaciente + "</td>";
-            fila += "<td>" + value.apepaciente + "</td>";
-            fila += "<td>" + value.telfpaciente + "</td>";
-            fila += "<td>" + value.correopaciente + "</td>";
-            fila += "<td>" + value.idclinica + "</td>";
-            fila += "<td>" + value.sede + "</td>";
-            fila += "<td>" + value.idreserva + "</td>"; 
-            fila += "<td>" + value.horareserva + "</td>";   
-            fila += "<td>" + value.fechareserva + "</td>";    
-            fila += "<td>" + value.motivo + "</td>"; 
+            fila += "<td>" + value.NomPaciente + "</td>";
+            fila += "<td>" + value.DniPaciente + "</td>";
+            fila += "<td>" + value.ApePaciente + "</td>";
+            fila += "<td>" + value.TelfPaciente + "</td>";
+            fila += "<td>" + value.CorreoPaciente + "</td>";
+            fila += "<td>" + value.IdClinica + "</td>";
+            fila += "<td>" + value.Sede + "</td>";
+            fila += "<td>" + value.IdReserva + "</td>"; 
+            fila += "<td>" + value.Hora + "</td>";   
+            fila += "<td>" + value.Fecha + "</td>";    
+            fila += "<td>" + value.Motivo + "</td>"; 
             fila += "<td><i class='bi bi-x-lg boton-eliminar'></i></td>";
             fila += "<td><i class='bi bi-pencil-fill boton-actualizar' data-bs-toggle='modal' data-bs-target='#modal-actualizar'></i></td>";
             fila += "</tr>";
@@ -103,6 +103,7 @@ leerDatos();
  }
 $("#btnAgregarPaciente").click(()=>{
     var nombre = $("#txtNombre").val();
+    var dni = $("#txtDni").val();
     var apellido = $("#txtApellido").val();
     var telefono = $("#txtTelefono").val();
     var correo = $("#txtCorreo").val();
@@ -112,6 +113,7 @@ $("#btnAgregarPaciente").click(()=>{
     var motivo = $("#txtMotivo").val();
 
     $("#txtNombre").val("");
+    $("#txtDni").val("");
     $("#txtApellido").val("");
     $("#txtTelefono").val("");
     $("#txtCorreo").val("");
@@ -126,6 +128,7 @@ $("#btnAgregarPaciente").click(()=>{
   
     var formData = new FormData();
     formData.append("nom",nombre);
+    formData.append("dni",dni);
     formData.append("ape",apellido);
     formData.append("telf",telefono);
     formData.append("correo",correo);
