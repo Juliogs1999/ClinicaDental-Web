@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Inicio de sesión exitoso
-        header("Location: http://127.0.0.1:5500/ClinicaDental-web/usuario.html");
+        header("Location: http://127.0.0.1:5500/usuario.html");
         exit(); // Asegura que el script se detenga después de la redirección
     } else {
         // Credenciales incorrectas

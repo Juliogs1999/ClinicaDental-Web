@@ -28,21 +28,9 @@
 
    
     $rs = mysqli_query($cn,"INSERT INTO reserva (Fecha,Hora,Motivo,DniPaciente,IdClinica) VALUES('$fecha','$hora','$motivo','$dni','$IdClinica')"); 
+   
     
-    mysqli_close($cn);
-
-    //http://localhost/servicioweb/serviciocategoriasinsertar.php?nom=juguetes&des=jugueteria
-
-    if (!$rs) {
-        die('Error: ' . mysqli_error($cn));
-    }
-
-    if (!$cn) {
-        die('Error de conexión: ' . mysqli_connect_error());
-    }
-    if (!$rs) {
-        echo "Error en la consulta: " . mysqli_error($cn);
-    }
-
-    
+    //cerrar coenxion
+        mysqli_close($cn);
+   
 ?>
