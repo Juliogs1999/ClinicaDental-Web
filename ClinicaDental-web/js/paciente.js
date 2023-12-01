@@ -40,16 +40,15 @@ leerDatos();
         $("#tbody-paciente").html("");
         $(datos).each((index,value) => {
             var fila = "<tr>";
+            fila += "<td>" + value.IdReserva + "</td>";
             fila += "<td>" + value.NomPaciente + "</td>";
-            fila += "<td>" + value.DniPaciente + "</td>";
             fila += "<td>" + value.ApePaciente + "</td>";
-            fila += "<td>" + value.TelfPaciente + "</td>";
+            fila += "<td>" + value.DniPaciente + "</td>";
             fila += "<td>" + value.CorreoPaciente + "</td>";
-            fila += "<td>" + value.IdClinica + "</td>";
+            fila += "<td>" + value.TelfPaciente + "</td>";
             fila += "<td>" + value.Sede + "</td>";
-            fila += "<td>" + value.IdReserva + "</td>"; 
+            fila += "<td>" + value.Fecha + "</td>"; 
             fila += "<td>" + value.Hora + "</td>";   
-            fila += "<td>" + value.Fecha + "</td>";    
             fila += "<td>" + value.Motivo + "</td>"; 
             fila += "<td><i class='bi bi-x-lg boton-eliminar'></i></td>";
             fila += "<td><i class='bi bi-pencil-fill boton-actualizar' data-bs-toggle='modal' data-bs-target='#modal-actualizar'></i></td>";
@@ -112,6 +111,24 @@ $("#btnAgregarPaciente").click(()=>{
     var hora = $("#txtHora").val();
     var motivo = $("#txtMotivo").val();
 
+
+    
+    if (
+        nombre === "" ||
+        dni === "" ||
+        apellido === "" ||
+        telefono === "" ||
+        correo === "" ||
+        sede === "" ||
+        fecha === "" ||
+        hora === "" ||
+        motivo === ""
+    ) {
+        // Mostrar un mensaje de error o realizar alguna acción si algún campo está vacío
+        alert("Todos los campos son obligatorios");
+        return; // Detener la ejecución si hay campos vacíos
+    }
+
     $("#txtNombre").val("");
     $("#txtDni").val("");
     $("#txtApellido").val("");
@@ -133,7 +150,7 @@ $("#btnAgregarPaciente").click(()=>{
     formData.append("telf",telefono);
     formData.append("correo",correo);
     formData.append("sede",sede);
-    formData.append("fecha",fecha);
+    formData.append("fecha", fecha);
     formData.append("hora",hora);
     formData.append("motivo",motivo);
 
@@ -146,6 +163,7 @@ $("#btnAgregarPaciente").click(()=>{
     .then(datos =>{
         console.log(datos);
         leerDatos();
+        alert("Reserva Exitosa!");
     })
 });
 

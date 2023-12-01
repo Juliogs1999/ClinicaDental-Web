@@ -1,0 +1,19 @@
+body{
+    /* Ajusta el tamaño del fondo y la forma en que se muestra */
+    background-image: url('img/fondo-login2.png'); /* Cambia 'ruta/de/la/imagen.jpg' por la ruta de tu imagen */
+    background-size: cover; /* Cubrir todo el fondo */
+    background-position: center; /* Centrar la imagen */
+     
+    background-repeat: no-repeat;  /* Evitar que la imagen se repita */
+     background-attachment: fixed; /* Fijar la imagen de fondo */
+     
+}
+
+
+.card {
+    max-width: 18rem;
+    width: 100%;
+}
+.m-top{
+    margin-top: 15%;
+}
