@@ -3,9 +3,7 @@ footer {
 	background: #0F1B40;
 	
 }
-.boton-eliminar, .boton-actualizar{
-    cursor: pointer;
-}
+
 
 .letra-roboto{
     font-family: 'Roboto', sans-serif;
@@ -161,6 +159,9 @@ u{
     background-color: #EFB048 !important;
     color: #FFFFFF !important;
 }
-
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #212F5B; /* Cambia "blue" al color que desees */
+}
 
   

@@ -61,13 +61,12 @@ leerDatos();
             var posicion = filaActual.index();
             console.log(posicion);
             console.log(datos[posicion]);
-            console.log(datos[posicion].nompaciente);
-            var idpaciente = datos[posicion].idpaciente;
+            console.log(datos[posicion].NomPaciente);
+            var IdReserva = datos[posicion].IdReserva;
             var respuesta = confirm("¿Esta seguro que desea eliminar el Paciente " 
-                + datos[posicion].nompaciente + "?" )
+                + datos[posicion].NomPaciente + "?" )
             if(respuesta == true){
-                eliminarPaciente(idpaciente);
-                
+                eliminarPaciente(IdReserva);
           }
      });
      
@@ -84,11 +83,11 @@ leerDatos();
 
  }
 
- eliminarPaciente = (idpaciente) => {
+ eliminarPaciente = (IdReserva) => {
     var ruta = "http://localhost/serviciosmiley/servicioeliminarpaciente.php";
 
     var formData = new FormData();
-    formData.append("idpaciente",idpaciente);
+    formData.append("IdReserva",IdReserva);
     
 
     fetch(ruta,{
@@ -100,7 +99,8 @@ leerDatos();
         leerDatos();
     })
  }
-$("#btnAgregarPaciente").click(()=>{
+ $("#btnAgregarPaciente").click((event)=>{
+    event.preventDefault();
     var nombre = $("#txtNombre").val();
     var dni = $("#txtDni").val();
     var apellido = $("#txtApellido").val();
@@ -140,32 +140,56 @@ $("#btnAgregarPaciente").click(()=>{
     $("#txtMotivo").val("");
 
    
+    if (dni !== "") {
+        // Realizar la solicitud para verificar si el DNI ya existe
 
-    var ruta = "http://localhost/serviciosmiley/servicioinsertarpaciente.php";
+        var rutaVerificarDNI = "http://localhost/serviciosmiley/verificar-dni.php";
+
+        var formDataDNI = new FormData();
+        formDataDNI.append("dni", dni);
+
+        fetch(rutaVerificarDNI, {
+            method: 'POST',
+            body: formDataDNI
+        })
+        .then(response => response.json())
+        .then(resultado => {
+            if (resultado.existe) {
+                alert("El DNI ya está registrado. No se puede agregar un paciente con el mismo DNI.");
+            } else {
+                var ruta = "http://localhost/serviciosmiley/servicioinsertarpaciente.php";
   
-    var formData = new FormData();
-    formData.append("nom",nombre);
-    formData.append("dni",dni);
-    formData.append("ape",apellido);
-    formData.append("telf",telefono);
-    formData.append("correo",correo);
-    formData.append("sede",sede);
-    formData.append("fecha", fecha);
-    formData.append("hora",hora);
-    formData.append("motivo",motivo);
+            var formData = new FormData();
+            formData.append("nom",nombre);
+            formData.append("dni",dni);
+            formData.append("ape",apellido);
+            formData.append("telf",telefono);
+            formData.append("correo",correo);
+            formData.append("sede",sede);
+            formData.append("fecha", fecha);
+            formData.append("hora",hora);
+            formData.append("motivo",motivo);
+
+            
+            fetch(ruta,{
+                method: 'POST', 
+                body: formData
+            })
+            .then(response => response.text())
+            .then(datos =>{
+                console.log(datos);
+                leerDatos();
+                alert("Reserva Exitosa!");
+            })
+        }
+    })
+     .catch(error => {
+         console.error('Error al verificar el DNI:', error);
+        });
+    }
+});
 
     
-    fetch(ruta,{
-        method: 'POST', 
-        body: formData
-    })
-    .then(response => response.text())
-    .then(datos =>{
-        console.log(datos);
-        leerDatos();
-        alert("Reserva Exitosa!");
-    })
-});
 
 $("#btnActualizar").click(() => {
     var idpaciente = $("#txtIdpacienteActualizar").val();
@@ -191,7 +215,7 @@ $("#btnActualizar").click(() => {
     .then(() => {
         leerDatos();
     })
-})
+});
 
 
 
