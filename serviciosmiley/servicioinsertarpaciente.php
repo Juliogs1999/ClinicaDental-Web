@@ -4,11 +4,7 @@ header('Access-Control-Allow-Origin: *');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-//use Twilio\Rest\Client;
-//require __DIR__ . '/vendor/autoload.php'; // Ruta de la librería Twilio
-require __DIR__ . '/twilio-php-main/src/Twilio/autoload.php';
 
-use Twilio\Rest\Client;
 
 
 require 'PHPMailer/Exception.php';
@@ -76,34 +72,38 @@ try {
 }
 
 
-// ... (tu código existente)
+// Crear un evento en Google Calendar
+require __DIR__ . '/vendor/autoload.php'; // Ruta del cliente de Google API PHP
+// Reemplaza 'ruta/credenciales.json' con la ubicación de tus credenciales
+$client = new Google_Client();
+$client->setAuthConfig('client_secret_142784826394-j84nv21gu6v34k18u714jvt55gp72ge8.apps.googleusercontent.com.json');
+$client->addScope(Google_Service_Calendar::CALENDAR);
 
-// Código para enviar un mensaje de texto
+$service = new Google_Service_Calendar($client);
 
+$evento = new Google_Service_Calendar_Event(array(
+    'summary' => 'Reserva en Smiley Peru', // Título del evento
+    'description' => "Reserva en Smiley Peru confirmada para $nom $ape en la sede $sede el día $fecha a las $hora", // Descripción del evento
+    'start' => array(
+        'dateTime' => "$fecha"."T"."$hora", // Fecha y hora de inicio del evento
+        'timeZone' => 'America/Lima', // Zona horaria (cambia según tu ubicación)
+    ),
+    'end' => array(
+        'dateTime' => "$fecha"."T"."$hora", // Fecha y hora de finalización del evento (en este caso, el mismo que el inicio)
+        'timeZone' => 'America/Lima', // Zona horaria (cambia según tu ubicación)
+    ),
+));
 
-$account_sid = getenv('AC4d596591f55dfd1912f2b1d6b2f484ba');
-$auth_token = getenv('4885973f5fa26fe8042cbe0b20c6f71b');// Reemplaza con tu auth token
-$twilio_number = "+15017122661";
+$calendarId = 'tu_calendar_id@group.calendar.google.com'; // Reemplaza con tu ID de calendario
+$eventoCreado = $service->events->insert($calendarId, $evento);
 
-$mensajeSMS = "Estimado/a $nom $ape,<br><br>Tu reserva en Smiley Peru ha sido confirmada en la sede $sede para el día $fecha a las $hora.<br><br>Gracias por confiar en nosotros.<br>Equipo Smiley Peru"
-
-try {
-    $mensaje = $twilio->messages->create(
-        // Número desde el que se enviará el mensaje (tu número verificado)
-        , $telf 
-        array(
-            // Número al que se enviará el mensaje (proporcionado por el usuario)
-            'from' =>$twilio_number,
-            'body' => $mensajeSMS
-        )
-    );
-
-    // Éxito al enviar el mensaje
-    echo 'Mensaje de texto enviado correctamente';
-} catch (Exception $e) {
-    // Error al enviar el mensaje
-    echo "Hubo un error al enviar el mensaje de texto: {$e->getMessage()}";
+if ($eventoCreado) {
+    echo 'Evento creado en Google Calendar correctamente';
+} else {
+    echo 'Hubo un error al crear el evento en Google Calendar';
 }
+
+
 
 
 
