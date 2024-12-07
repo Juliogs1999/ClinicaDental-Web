@@ -1,0 +1,32 @@
+
+  .boton-actualizarproc, .boton-eliminarproc {
+    cursor: pointer;
+    display: none; /* Por defecto, oculta el botón "x" */
+    position: absolute; /* Hace que el botón tenga una posición absoluta */
+    top: 50%; /* Lo posiciona en el centro verticalmente */
+    left: 50%; /* Lo posiciona en el centro horizontalmente */
+    transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+  }
+
+  .contenedor-procedimiento {
+    position: relative; /* Necesario para que el botón absoluto se posicione correctamente */
+  }
+
+  .contenedor-procedimiento:hover .boton-actualizarproc {
+    display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+  }
+  
+  
+.table-bordered th, .table-bordered td {
+    border: 1px solid black;
+     /* Grosor y color de la línea horizontal */
+}
+ .contenedor-procedimiento2{
+  position: relative;
+ }
+ .contenedor-procedimiento2:hover .boton-eliminarproc{
+  display: inline-block;
+ }
+
+  /* Elimina el borde derecho de la última columna */
+ 

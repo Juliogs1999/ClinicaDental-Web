@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Paciente - Centro Odontológico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .header {
+            background-color: #052A99;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            background-color: #ffffff;
+        }
+        .perfil-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .perfil-info {
+            flex: 1 1 45%;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #e7f3ff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .atenciones-card {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #d1e7dd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .text-label {
+            font-weight: bold;
+            color: #052A99;
+        }
+        .text-value {
+            color: #555;
+            margin-top: 5px;
+        }
+        .btn {
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+        }
+        .footer-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .no-info {
+            color: #888;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .perfil-info {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Perfil del Paciente</h1>
+    </div>
+    <div class="container mt-4">
+        <div id="perfil" class="card">
+            <div class="card-body">
+                <div class="perfil-container">
+                    <div class="perfil-info">
+                        <p class="text-label">Historia Clínica:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="codigo">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Nombres:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="nombre">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Apellidos:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="apellido">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Tipo de Documento:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="tipoDocumento">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Número de Documento:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="dni">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Teléfono:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="telefono">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Sede:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="sede">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Dirección:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="direccion">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Especialidad:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="especialidad">Ninguna Información</p></strong>
+                    </div>
+                    <div class="perfil-info">
+                        <p class="text-label">Fecha de Nacimiento:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="fechaNac">Ninguna Información</p></strong>
+                    </div>
+                </div>
+                
+                <div class="atenciones-card">
+                    <h5 class="text-label">Atenciones Recientes:</h5>
+                    <div>
+                        <p class="text-label" style="margin-bottom: 5px;">Primera Atención:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="primeraAtencion">Ninguna Información</p></strong>
+                    </div>
+                    <div>
+                        <p class="text-label" style="margin-bottom: 5px;">Última Atención:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="ultimaAtencion">Ninguna Información</p></strong>
+                    </div>
+                    <div>
+                        <p class="text-label"style="margin-bottom: 5px;">Fecha de Limpieza:</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="fechaLimpieza">Ninguna Información</p></strong>
+                    </div>
+                    <div>
+                        <p class="text-label" style="margin-bottom: 5px;">Nombre y Apellido del Apoderado</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="nombrepadre">Ninguna Información</p></strong>
+                    </div>
+                    <div>
+                        <p class="text-label" style="margin-bottom: 5px;">DNI del Apoderado</p>
+                        <strong><p class="text-value" style="margin-bottom: 5px;" id="dnipadre">Ninguna Información</p></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-buttons">
+                <a href="pagina_radiografias.html?paciente=" class="btn btn-info"><i class="fas fa-file-alt"></i> Radiografias</a>
+                <a href="pagina_presupuesto.html?paciente=" class="btn btn-primary"><i class="fas fa-file-alt"></i> Presupuestos</a>
+                <a href="pagina_tratamientos.html?paciente=" class="btn btn-success"><i class="fas fa-notes-medical"></i> Ver Tratamientos</a>
+                <a href="javascript:void(0);" onclick="window.history.back();" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Volver</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function obtenerParametroURL(parametro) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parametro);
+        }
+
+        function obtenerDatosPaciente(codigoPaciente) {
+            var rutaPaciente = "http://localhost/serviciosmiley/detalles-paciente.php?codigo=" + codigoPaciente;
+
+            fetch(rutaPaciente)
+                .then(response => response.json())
+                .then(datos => {
+                    if (datos.length > 0) {
+                        var paciente = datos[0];
+                        $("#codigo").text(paciente.Codigo || "Ninguna Información");
+                        $("#nombre").text(paciente.Nombre || "Ninguna Información");
+                        $("#apellido").text(paciente.Apellido || "Ninguna Información");
+                        $("#tipoDocumento").text(paciente.Correo || "Ninguna Información");
+                        $("#dni").text(paciente.Dni || "Ninguna Información");
+                        $("#telefono").text(paciente.Telefono || "Ninguna Información");
+                        $("#sede").text(paciente.Sede || "Ninguna Información");
+                        $("#direccion").text(paciente.Direccion || "Ninguna Información");
+                        $("#especialidad").text(paciente.Especialidad || "Ninguna Información");
+                        $("#fechaNac").text(formatDate(paciente.Fechanac) || "Ninguna Información");
+                        $("#primeraAtencion").text(formatDate(paciente.Fecha) || "Ninguna Información");
+                        $("#ultimaAtencion").text(formatDate(paciente.Fechafin) || "Ninguna Información");
+                        $("#fechaLimpieza").text(formatDate(paciente.Fechalimpieza) || "Ninguna Información");
+                        $("#nombrepadre").text(paciente.NombrePadre || "Ninguna Información");
+                        $("#dnipadre").text(paciente.DniPadre || "Ninguna Información");
+                        $(".btn-info").attr("href", "pagina_radiografias.html?paciente=" + paciente.Codigo);
+                        $(".btn-primary").attr("href", "pagina_presupuesto.html?paciente=" + paciente.Codigo);
+                        $(".btn-success").attr("href", "pagina_tratamientos.html?paciente=" + paciente.Codigo);
+                    } else {
+                        console.error('No se encontraron datos para el paciente.');
+                    }
+                })
+                .catch(error => console.error('Error al obtener los datos del paciente:', error));
+        }
+
+        window.onload = function() {
+            var codigoPaciente = obtenerParametroURL('paciente');
+            if (codigoPaciente) {
+                obtenerDatosPaciente(codigoPaciente);
+            } else {
+                console.error('El parámetro de paciente no está definido en la URL.');
+            }
+        }
+
+        function formatDate(dateString) {
+            if (!dateString || dateString.trim() === "" || !/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+                return "Ninguna Información";
+            }
+            var parts = dateString.split('-');
+            var date = new Date(parts[0], parts[1] - 1, parts[2]);
+            if (isNaN(date.getTime()) || date.getFullYear() < 1900) {
+                return "Ninguna Información";
+            }
+            var day = String(date.getDate()).padStart(2, '0');
+            var monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            var month = monthNames[date.getMonth()];
+            var year = date.getFullYear();
+            return day + ' de ' + month + ' de ' + year;
+        }
+    </script>
+</body>
+</html>

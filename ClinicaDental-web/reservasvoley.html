@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voley</title>
+    <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css"> 
+    
+    
+</head>
+<body class="bg-white">
+
+    <div class="container">
+      <nav class="navbar sticky-top" style="background-color: #f0f1f6;">
+        <div class="container">
+          <a class="navbar-brand" href="voley.html">
+            <img src="img/voley/logotriangulo.png" alt="Bootstrap" width="75" height="75">
+          </a>
+          <ul class="nav">
+           <!-- <li class="nav-item">
+              <a class="nav-link btn btn-warning" style="color: #212F5B;" href="#cancha1"><i class="bi bi-calendar-date"></i> <strong>Cancha 1</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-warning" style="color: #212F5B;" href="#cancha2"><i class="bi bi-calendar-date"></i> <strong>Cancha 2</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-warning" style="color: #212F5B;" href="#cancha3"><i class="bi bi-calendar-date"></i> <strong>Cancha 3</strong></a>
+            </li>-->
+           
+            <li class="nav-item">
+              <a class="btn btn-outline-danger" href="voley.html"><i class="bi bi-caret-left-square-fill"></i> <strong>Volver</strong></a>
+            </li>
+           
+           
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid text-center">
+      <h1 class="cancha" id="cancha1" style="color: #212F5B;"><i class="bi bi-calendar-date"></i> <strong>Calendario El Triangulo</strong></h1>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FLima&bgcolor=%230B8043&mode=WEEK&showPrint=0&title=El%20TRIANGULO&showTz=0&showCalendars=0&src=Y2FuY2hhZWx0cmlhbmd1bG8yMDI0QGdtYWlsLmNvbQ&color=%23039BE5" style="border:solid 1px #777" width="1000" height="600" frameborder="0" scrolling="no"></iframe></div>
+
+     <!--<div class="container-fluid text-center">
+      <h1 class="cancha mt-5" id="cancha2" style="color: #212F5B;"><i class="bi bi-calendar-date"></i> <strong>Cancha 2</strong></h1>
+      <iframe src="https://calendar.google.com/calendar/embed?src=c9c1e732727739814ab5b4be6a6cdf68064c7b9471b1803996f71ca52722f8ba%40group.calendar.google.com&ctz=America%2FLima" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+      <div class="container text-center">
+      <h1 class="cancha mt-5" id="cancha3" style="color: #212F5B;"><i class="bi bi-calendar-date"></i> <strong>Cancha 3</strong></h1>
+      <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%23ffffff&ctz=America%2FLima&src=Y2FuY2hhZWx0cmlhbmd1bG8zMTZAZ21haWwuY29t&src=ODZhNmJiY2E0YTQ3NmZhNDMyYzY5Y2YzMzM0M2Q0NjIxNTdmNTRjYzQxOWFhYzA2NTZlOWY1ZGVhNGJkODgxN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NzNlMmRjNGJkN2JjYjRiZmUzMDZmMzQwMDNmMmNkYmJhNDE2MjY2YTc3OTk4MjJkOTRiZDIzNTU5YWMwOTA1YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZXMucGUjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23AD1457&color=%234285F4&color=%230B8043" style="border:solid 1px #777" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+      
+      </div>-->
+
+      <div class="container-fluid mt-5 mb-5">
+        <img src="img/voley/footer-voley.png" class="img-fluid " alt="..."> 
+      </div>
+
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- CDN de Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script>
+  // JavaScript para ajustar el desplazamiento de la página al hacer clic en los enlaces de la cancha
+  document.querySelectorAll('a[href^="#cancha"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          const navbarHeight = document.querySelector('.navbar').offsetHeight; // Altura del navbar
+          const offsetTop = target.offsetTop - navbarHeight;
+          window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+  
+    
+    <script src="js/main.js"></script>
+    <script src="js/paciente.js"></script>
+</body>
+</html>

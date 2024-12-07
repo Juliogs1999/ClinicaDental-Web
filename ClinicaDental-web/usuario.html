@@ -3,32 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
+    
+    <title>Calendario</title>
     <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-
-    <div class="container">
-        <h2>Reservas</h2>
+  <nav>
+  <div class="container navbar bn-color sticky-top">
+    <a class="navbar-brand bn-color" >
+      <img src="img/logo-blanco.png"height="105">
+    </a>
+    <ul class="nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " style="color: #212F5B;" target="_blank" href="https://api.whatsapp.com/send?phone=51946455607"><i class="bi bi-whatsapp text-warning"></i></i> <strong class="text-white">946 455 607</strong> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " style="color: #212F5B;" href="#"><i class="bi bi-envelope-fill text-warning"></i> <strong class="text-white">smileyconsultorios@gmail.com</strong></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-warning" style="color: #212F5B;" href="registropac.html"><i class="bi bi-calendar-date"></i> <strong>Pacientes</strong></a>
+      </li>
+      &nbsp;
+      <li class="nav-item">
+        <a class="btn btn-success" style="color: #212F5B;" href="costo-formulario.html"><i class="bi bi-building"></i> <strong>Presupuesto</strong></a>
+      </li>
+      &nbsp;
+       <li class="nav-item ">
+        <!--<a class="btn btn-outline-danger" href="index.html"><i class="bi bi-caret-left-square-fill"></i> <strong>Volver</strong></a>--> 
+         <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
+       </li>
+      
+      
+     </ul>
+  <div>
+ </nav>
+   <div class="container">
+        <h2>Datos de Pacientes</h2>
         
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Codigo Reserva</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Dni</th>
-              <th>Correo</th>
-              <th>Telefono</th>                    
-              <th>Sede</th>
-              <th>Fecha</th>
-              <th>Hora</th>
-              <th>Motivo</th>
-              <th></th>
-              <th></th>
+              <th class="text-warning" style="background-color: #212F5B;">Historia Clinica</th>
+              <th class="text-white" style="background-color: #212F5B;">Nombre</th>
+              <th class="text-white" style="background-color: #212F5B;">Apellido</th>
+              <th class="text-white" style="background-color: #212F5B;">Dni</th>
+              <th class="text-white" style="background-color: #212F5B;">Correo</th>                                 
+              <th class="text-white" style="background-color: #212F5B;">Dirección</th>
+              <th class="text-white" style="background-color: #212F5B;">Fecha</th>
+              <th class="text-white" style="background-color: #212F5B;">Especialidad</th>
+              <th class="text-white" style="background-color: #212F5B;">Motivo</th>
+              <th class="text-white" style="background-color: #212F5B;"></th>
+              <th class="text-white" style="background-color: #212F5B;"></th>
               
               
             </tr>
@@ -39,31 +67,89 @@
           </tbody>
       
         </table>
-        <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
+        
       </div>
+      <div class="modal fade" id="modal-actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Paciente</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">           
+                <div class="mb-3">          
+                      <input type="text" class="form-control" id="txtCodigoActualizar" readonly>
+                </div>             
+                <div class="mb-3">              
+                      <input type="text" class="form-control" id="txtNombreActualizar" placeholder="Nombre">  
+                </div>
+                <div class="mb-3">                
+                      <input type="text" class="form-control" id="txtApellidoActualizar" placeholder="Apellido">             
+                </div>
+                <div class="mb-3">                             
+                    <input type="text" class="form-control" id="txtDniActualizar" placeholder="Dni">         
+                </div>
+                <div class="mb-3">   
+                    <input type="text" class="form-control" id="txtCorreoActualizar" placeholder="Correo Electronico">      
+                </div>
+                <div class="mb-3">    
+                  <input type="text" class="form-control" id="txtDireccionActualizar" placeholder="Direccion">     
+                </div>
+                <div class="mb-3">                              
+                  <input type="text" class="form-control" id="txtFechaActualizar" placeholder="Fecha">   
+                </div>
+                <div class="mb-3">  
+                  <input type="text" class="form-control" id="txtEspecialidadActualizar" placeholder="Especialidad">  
+                </div>
+                <div class="mb-3">                            
+                  <input type="text" class="form-control" id="txtMotivoActualizar" placeholder="Motivo">
+                </div> 
+  
+            </div>
+          
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizar">Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
       
-
+      <div class="container text-center">
+        <h1 style="color: #212F5B;"><i class="bi bi-calendar-date"></i> Calendario de Pacientes</h1>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FLima&bgcolor=%234285F4&showPrint=0&showCalendars=0&showTz=0&mode=WEEK&src=c21pbGV5Y29uc3VsdG9yaW9zQGdtYWlsLmNvbQ&color=%23039BE5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <br>
+    <br>
+    <footer class="container-fluid bn-color text-center text-white">@2023 Todos los derechos reservado | Consultorio Odontológico Smiley</footer>
     <!-- Agrega los enlaces a los archivos JS de Bootstrap y jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- CDN de Moment.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 
     <script src="js/paciente.js"></script>
     <script src="js/main.js"></script>
     <script>
       document.getElementById('logoutBtn').addEventListener('click', function() {
-           const confirmLogout = confirm('¿Estás seguro de que deseas Cerrar Sesión?');
-        if (confirmLogout) {        
-             window.location.href = 'index.html';
-        } else {
-            // El usuario canceló el cierre de sesión
-            // Puedes agregar aquí alguna acción adicional si es necesario
-        }
-        });
-      
+          const confirmLogout = confirm('¿Estás seguro de que deseas Cerrar Sesión?');
+          if (confirmLogout) {
+            sessionStorage.clear();
+              window.location.href = 'index.html';
+          } else {
+              // El usuario canceló el cierre de sesión
+              window.location.href = 'login.html';
+              // Puedes agregar aquí alguna acción adicional si es necesario
+          }
+      });
   </script>
+  <!------------------------------------------------------>
+  
 </body>
 </html>
 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto de Paciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="smileyfondo.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <div class="contenido">
+    <div class="container">
+    <!-- Otro contenido de tu página -->
+    
+  
+    <div class="">
+    <img src="img-costo/costo.png" alt="" class="img-fluid" style="width: 94%; height: auto;">
+    <!--<a class="btn btn-warning" href="costo-formulario.html">Formulario</a>-->
+    </div>
+  
+
+<div class="container pt-5 letra-oswald700">
+    <div class="row">
+        <div class="col-md-2 col-2 text-end">
+            <img src="img-costo/tablamedica.jpg" class="img-fluid" style="height: 85%; width: auto;" alt="">
+        </div>
+        <div class="col-md-10 col-12">
+            <div class=" table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 33%; font-size: 0.5em;">NOMBRE Y APELLIDO</th>
+                            <th style="width: 67%; font-size: 0.5em;">SEDE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-costo">
+                        <!-- Aquí irán los datos de los pacientes -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 33%; font-size: 0.5em;">FECHA DE ELABORACION</th>
+                            <th style="width: 35%; font-size: 0.5em;">ESPECIALIDAD</th>
+                            <th style="width: 28%; font-size: 0.5em;">DOCTOR</th>
+                            <th style="width: 4%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-costo2">
+                        <!-- Aquí irán los datos de los pacientes -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=" pt-5">
+    <div>
+        <h5 class="c-color2 letra-bold700-italic">TRATAMIENTO ODONTOLOGICO INTEGRAL</h5>
+    </div>
+    <table class="table table-responsive">
+        <thead>
+            <tr class="sticky-top letra-roboto500-italic">
+                <th class="text-white" style="background-color: #052a99; font-size: 0.5em; padding: 5px; line-height: 1;">CANTIDAD</th>
+                <th class="text-white" style="background-color: #052a99; font-size: 0.5em; padding: 5px; line-height: 1;">DESCRIPCION DEL TRATAMIENTO</th>
+                <th class="text-white" style="background-color: #052a99; font-size: 0.5em; padding: 5px; line-height: 1;">SUB TOTAL</th>
+                <th class="text-white" style="background-color: #052a99;  font-size: 0.5em; padding: 5px; line-height: 1;">TOTAL</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tbody-precio">
+        </tbody>
+    </table>
+</div>
+
+<div class="">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="img-costo/numero-cuenta.png" class="img-fluid" style="margin-top: -70px; width: 75%; height: auto;">
+        </div>
+        <div class="col-md-6 text-start">
+            <img src="img-costo/firma-jhon.png" class="img-fluid" style="width: 80%; height: auto;">
+        </div>
+    </div>
+</div>
+
+<div class="">
+    <img src="img-costo/pagoss.png" class="img-fluid" style="width: 20%; height: auto;">
+</div>
+
+<footer class=" pt-3">
+    <img src="img-costo/precio-footer.png" alt="" style="width: 94%; height: auto;">
+</footer>
+</div>
+</div>
+<div class="container">
+    <button onclick="obtenerNombreApellidoYDescargarPDF()">Descargar PDF</button>
+    <a class="btn btn-warning" href="costo-formulario.html">Formulario</a>
+    <button id="btnLimpiarTratamientos" class="btn btn-danger">Limpiar Tratamientos</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+    function obtenerNombreApellidoYDescargarPDF() {
+        // Realizar una solicitud AJAX para obtener los datos del archivo PHP
+        $.ajax({
+            url: 'http://localhost/serviciosmiley/costo/servicio-costover.php', // Reemplaza 'tu_archivo_php.php' con la ruta correcta
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Acceder al valor de NombreApellido
+                var nombreApellido = data[0].NombreApellido; // Supongo que solo hay un valor de NombreApellido en la respuesta
+                // Descargar el PDF con el nombre obtenido
+                descargarPDF(nombreApellido);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error al obtener los datos:', error);
+            }
+        });
+    }
+
+    function descargarPDF(nombreArchivo) {
+        nombreArchivo = nombreArchivo.replace(/\s/g, '');
+        var element = document.querySelector('.contenido'); // Selecciona el elemento que deseas convertir a PDF
+        var opt = {
+            margin: 1,
+            filename: nombreArchivo + '.pdf', // Nombre del archivo basado en el valor de NombreApellido
+            image: { type: 'jpeg', quality: 1.0 },
+            html2canvas: { scale: 3 },
+            jsPDF: { 
+                unit: 'in',
+                format: [21.59, 12.16],  // Utiliza el formato de carta 'letter',
+                orientation: 'landscape', // Orientación vertical
+                compressPDF: true // Comprimir el PDF
+            },
+            pagebreak: { mode: 'avoid-all' }, // Evitará que el contenido se divida en varias páginas
+            html2pdf: { width: element.offsetWidth, height: element.offsetHeight } // Tamaño del PDF igual al tamaño del div .contenido
+        };
+        html2pdf().from(element).set(opt).save();
+    }
+</script>
+<script>
+   
+</script>
+
+
+<!--boton eliminar-->
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="js/costo.js"></script>
+<script src="js/precio.js"></script>
+</body>
+</html>

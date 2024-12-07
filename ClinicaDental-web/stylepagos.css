@@ -1,0 +1,66 @@
+/* styles.css */
+
+.boton-actualizarcontabilidad, .boton-eliminarcontabilidad {
+    cursor: pointer;
+    display: none; /* Por defecto, oculta el botón "x" */
+    position: absolute; /* Hace que el botón tenga una posición absoluta */
+    top: 50%; /* Lo posiciona en el centro verticalmente */
+    left: 50%; /* Lo posiciona en el centro horizontalmente */
+    transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+  }
+
+  .contenedor-contabilidad {
+    position: relative; /* Necesario para que el botón absoluto se posicione correctamente */
+  }
+
+  .contenedor-contabilidad:hover .boton-eliminarcontabilidad {
+    display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+  }
+  
+  
+.table-bordered th, .table-bordered td {
+    border: 1px solid black;
+     /* Grosor y color de la línea horizontal */
+}
+ .contenedor-contabilidad2{
+  position: relative;
+ }
+ .contenedor-contabilidad2:hover .boton-actualizarcontabilidad{
+  display: inline-block;
+ }
+
+ 
+.boton-actualizaregreso, .boton-eliminaregreso {
+  cursor: pointer;
+  display: none; /* Por defecto, oculta el botón "x" */
+  position: absolute; /* Hace que el botón tenga una posición absoluta */
+  top: 50%; /* Lo posiciona en el centro verticalmente */
+  left: 50%; /* Lo posiciona en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+}
+
+.contenedor-egreso {
+  position: relative; /* Necesario para que el botón absoluto se posicione correctamente */
+}
+
+.contenedor-egreso:hover .boton-eliminaregreso {
+  display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+}
+
+
+
+.table-bordered th, .table-bordered td {
+  border: 1px solid black;
+   /* Grosor y color de la línea horizontal */
+}
+.contenedor-egreso2{
+position: relative;
+}
+.contenedor-egreso2:hover .boton-actualizaregreso{
+display: inline-block;
+}
+
+.cliente-no-encontrado {
+  color: red; /* Color del texto para indicar error */
+  font-style: italic; /* Estilo del texto para que se vea diferente */
+}

@@ -3,13 +3,68 @@ footer {
 	background: #0F1B40;
 	
 }
+.degradado {
+    width: 100%; /* Ancho del área del degradado */
+    height: auto; /* Alto del área del degradado */
+    background: linear-gradient(to right, #06216c, #00109D); /* De izquierda a derecha */
+    /* Si quieres de arriba hacia abajo, usa esto: */
+    /*background: linear-gradient(to bottom, #06216c, #00109D); */
+}   
+.playfair-display {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .slider-container {
+    position: relative;
+  }
 
+  .contact-info {
+    position: relative;
+    z-index: 1; /* Asegura que la información de contacto esté delante del slider */
+    margin-top: -8%; /* Ajusta según sea necesario */
+  }
+  
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 2vw; /* Tamaño del icono */
+    height: 2vw; /* Tamaño del icono */
+  }
+  .whatsapp-icon {
+    
+    border: 1px solid #fff;
+    position: fixed;
+    z-index: 999;
+    border-radius: 50%;
+    
+    animation: efecto 1.2s infinite;
+    transition: ease 0.3s; /* Agrega una transición suave */
+    position: relative; /* Para permitir posicionar elementos secundarios con respecto a él */
+  
+  }
+  .whatsapp-icon:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+  @keyframes efecto{
+    0%{
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+    }
+    100%{
+        box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+    }
+  }
 
 .letra-roboto{
     font-family: 'Roboto', sans-serif;
 }
 .bn-color{
     background-color: #212F5B;
+}
+.bn-color2{
+    background-color: #134E9C;
 }
 .c-color{
     color: #212F5B;
@@ -19,34 +74,32 @@ footer {
 }
 .letra1{
     color: #EFB048;
-    
-    
+       
+}
+.letravoley{
+    color: #134E9C;
+       
 }
 .icono-color{
     color: #EFB048;
-    font-size: 25px;
+    font-size: 2.5vw;
 }
 .letra2{
     color: black;   
 }
 body{
-    background-color: #EDEDED;
-    padding-left: 15px;
-    padding-right: 15px;  
+    background-color: white;
+      
 }
 .btn-azul{
     color: #212F5B;
-     border-radius: 0; 
-    padding-left: 25px; 
-    padding-right: 25px;
+     
+   
 }
 .pd-tamaño{
     padding-bottom: 30px;
 }
-.icono-tamaño{
-    font-size: 35px;
-    
-}
+
 .tratamiento{
     background-color: #EDEDED;
 }
@@ -69,26 +122,24 @@ body{
     background-color: white;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
-    padding-top: 60px;
-    padding-bottom: 40px; 
+    
 }
 #paciente{
     background-color: white;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    padding-top: 100px;
-    padding-bottom: 70px; 
-}
-#tratamiento{
     padding-top: 40px;
     padding-bottom: 40px;
+   
+}
+#tratamiento{
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .bg-nosotros{
     background-color: #E5E9F6;
 }
-.ml-nosotros{
-    margin-left: 7%;
-}
+
 #recomendacion{
     background-color: #E5E9F6;
     
@@ -105,16 +156,19 @@ body{
     }
 
 .circulo{
-    margin-top: -75px;
+    margin-top: -70px;
     
     
+}
+.icono-tamaño{
+    font-size: 3vw;
 }
 .circle {
     display: flex;
     align-items: center; /* Centra verticalmente el contenido del círculo */
     justify-content: center; /* Centra horizontalmente el contenido del círculo */
-    width: 40px; /* Ajusta el tamaño del círculo según tus preferencias */
-    height: 40px;
+    width: 120%; /* Ajusta el tamaño del círculo según tus preferencias */
+    height: 50%;
     margin-right: 1px; /* Espacio entre el círculo y el ícono */
     border: 2px solid #EFB048; /* Ancho y color de la línea circular */
     border-radius: 50%; /* Esto hace que el círculo sea circular */
@@ -147,13 +201,13 @@ u{
     text-decoration: underline;
     text-decoration-color: #EFB048;
     text-decoration-skip-ink: auto; /* Permite el control del espacio entre el subrayado y el texto */
-    text-underline-offset: 10px;
+    text-underline-offset: 4px;
 }
 .vr {
-    width: 4px; /* Ancho de la línea vertical */
-    height: 85%; /* Tamaño completo de la columna */
+    width: 2px; /* Ancho de la línea vertical */
+    height: 80%; /* Tamaño completo de la columna */
     background-color: #EFB048; /* Color de la línea vertical */
-    margin-right: 30px; /* Espacio entre la línea y el contenido */
+    margin-right: 20px; /* Espacio entre la línea y el contenido */
 }
 .nav-pills .nav-link.active {
     background-color: #EFB048 !important;
@@ -163,5 +217,6 @@ u{
 .carousel-control-next-icon {
     background-color: #212F5B; /* Cambia "blue" al color que desees */
 }
+
 
   

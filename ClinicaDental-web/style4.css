@@ -1,0 +1,114 @@
+
+html, body {
+	width: 100%;
+	/*height: 100%;*/
+	margin: 0;
+	padding: 0;
+}
+.table, .table th, .table td {
+    border: none;
+    
+}
+.table td{
+  border-bottom: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+}
+.boton-eliminarpaciente, .boton-actualizar, .boton-eliminartratamiento, .boton-eliminardescuento{
+    cursor: pointer;
+}
+.bn-color2{
+    background-color: #134E9C;
+}
+.c-color2{
+    color: #032765;
+}
+.letra-oswald{
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.letra-oswald700{
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.letra-bold700-italic{
+    font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.letra-roboto500-italic{
+    font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.letra-dmsam{
+    font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.fila-con-margen {
+    margin-bottom: 15px; 
+}
+.boton-eliminartratamiento {
+  display: none; /* Por defecto, oculta el botón "x" */
+  position: absolute; /* Hace que el botón tenga una posición absoluta */
+  top: 50%; /* Lo posiciona en el centro verticalmente */
+  left: 50%; /* Lo posiciona en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+}
+
+.contenedor-boton {
+  position: relative;
+   /* Necesario para que el botón absoluto se posicione correctamente */
+}
+
+.contenedor-boton:hover .boton-eliminartratamiento {
+  display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+}
+
+.boton-eliminarpaciente {
+  display: none; /* Por defecto, oculta el botón "x" */
+  position: absolute; /* Hace que el botón tenga una posición absoluta */
+  top: 50%; /* Lo posiciona en el centro verticalmente */
+  left: 50%; /* Lo posiciona en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+}
+
+.contenedor-boton2 {
+  position: relative; /* Necesario para que el botón absoluto se posicione correctamente */
+}
+
+.contenedor-boton2:hover .boton-eliminarpaciente {
+  display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+}
+
+.contenedor-boton3 {
+  position: relative; /* Necesario para que el botón absoluto se posicione correctamente */
+}
+
+.contenedor-boton3:hover .boton-eliminardescuento {
+  display: inline-block; /* Muestra el botón "x" cuando se pasa el mouse sobre el contenedor */
+}
+.boton-eliminardescuento{
+  display: none; /* Por defecto, oculta el botón "x" */
+  position: absolute; /* Hace que el botón tenga una posición absoluta */
+  top: 50%; /* Lo posiciona en el centro verticalmente */
+  left: 50%; /* Lo posiciona en el centro horizontalmente */
+  transform: translate(-50%, -50%); /* Lo centra exactamente en el centro del contenedor */
+}
+
+u{
+  text-decoration: underline;
+  text-decoration-color: #EFB048;
+  text-decoration-skip-ink: auto; /* Permite el control del espacio entre el subrayado y el texto */
+  text-underline-offset: 10px;
+}
+.c-color{
+  color: #212F5B;
+}
+
+

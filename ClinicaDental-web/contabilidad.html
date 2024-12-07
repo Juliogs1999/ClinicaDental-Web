@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos del paciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="smileyfondo.ico">
+   
+    <link rel="stylesheet" href="stylepagos.css">
+</head>
+<body>
+  <nav>
+    <div class="container navbar bn-color sticky-top"  style="background-color: #052A99;">
+      <a class="navbar-brand">
+        <img src="img/logo-smiley-principal.png" height="105">
+      </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link " style="color: #212F5B;" target="_blank" href="https://api.whatsapp.com/send?phone=51946455607"><i class="bi bi-whatsapp text-warning"></i></i> <strong class="text-white">946 455 607</strong> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " style="color: #212F5B;" href="#"><i class="bi bi-envelope-fill text-warning"></i> <strong class="text-white">smileyconsultorios@gmail.com</strong></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger text-start" href="registropac.html"><i class="bi bi-caret-left-square"></i> <strong>Volver</strong></a>
+        </li>
+        &nbsp;
+        <li class="nav-item">
+          <a class="btn btn-primary" style="color: #212F5B;" href="costo-formulario.html"><i class="bi bi-building"></i> <strong>Presupuesto</strong></a>
+        </li>&nbsp;
+       
+     
+         
+        
+        
+       </ul>
+    <div>
+   </nav>
+    <br> <!--REGISTROSSSSSS DE TRATAMIENTO-->    
+    <div class="container">
+      
+      <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color"  style="color: #212F5B;">Ex<u>ce</u>l</span></h1>
+      <form class="row" action="http://localhost/serviciosmiley/archivoexcel/servicio-agregar-excel.php>" method="POST">
+
+
+        <div class="col-md-6 col-12">
+            <label for="txtExcel" class="form-label"></label>
+            <input class="form-control" type="file" id="txtExcel" name="txtExcel">
+            
+        </div>
+        
+        
+      <div class="d-grid col-4 mx-auto mt-3">
+        <button class="btn btn-warning btn-azul" type="button" id="btnAgregarExcel"><strong>Agregar</strong></button>
+        
+      </div>
+      </form>
+
+
+
+    <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+      
+    </div>
+    <div class="container pt-5" >
+          <h5 class="ps-3">ARCHIVOS DE EXCEL </h5>
+        </div>
+        <div class="container table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              
+              <th style="width: 2%; border: none;"></th>
+              <th class="text-white" style="background-color: #052A99; width: 96%;">Nombre Archivo Excel</th>
+             <th></th>
+             
+              
+            
+              
+              
+            </tr>
+          </thead>
+      
+          <tbody id="tbody-excel">
+              
+          </tbody>
+      
+        </table>
+      
+      </div>  
+      <div class="modal fade" id="modal-actualizarse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Paciente</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">           
+                <div class="mb-3">          
+                      <input type="text" class="form-control" id="txtCodigoExcelActualizar" readonly>
+                </div>             
+                <div class="mb-3 input-group">   
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="txtExcelActualizar" name="txtExcelActualizar">
+                      
+                      
+                    </div>
+                </div>
+                
+              
+            </div>
+          
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizarExcel">Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container pb-1 letra-roboto" >
+      <div class="row justify-content-evenly">
+        <div class="col-md-2 col-4"><img src="img/conta-azul.png" class="img-fluid" alt="" style="height: 100%;"></div>
+        <div class="col-md-10 col-8">
+         
+          
+          
+        
+          <br>
+          <br>
+          <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color"  style="color: #212F5B;">Pa<u>go</u>s</span></h1>
+          <form class="row" action="http://localhost/serviciosmiley/tratamientos/insertar-tratamiento.php?paciente=<?php echo $codigo_paciente; ?>" method="POST">
+
+            <div class="col-md-6 pt-4">
+    
+              <select class="form-select" aria-label="Default select example" id="txtSedecont" >
+                <option selected disabled value="">Sede</option>
+                <option value="MIRAFLORES">MIRAFLORES</option>
+                <option value="LOS OLIVOS">LOS OLIVOS</option>
+                
+                                
+              </select>
+           
+          </div>
+            <div class="col-md-6 col-12">
+    
+              
+                <label for="txtFechacont" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Pago</strong></label>
+                <input type="date" class="form-control" id="txtFechacont">
+             
+            </div>
+            <div class="col-md-2 col-12 pt-4">
+    
+              
+            
+                <div class="input-group">
+                 
+                  <input type="number" class="form-control" id="txtHistoria" placeholder="Historia">
+                  <span class="input-group-text">
+                    <i class="bi bi-card-list text-warning"></i>
+                  </span>
+                  
+                </div>
+          </div>
+          <div class="col-md-6 col-12 pt-4">
+            <div class="input-group">
+                <input style="background-color: rgb(196, 194, 194);" type="text" class="form-control" id="txtClientecont" placeholder="Paciente" readonly>
+                <span class="input-group-text">
+                    <i class="bi bi-person text-warning"></i>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 col-12 pt-4">
+          <div class="input-group">
+              <input style="background-color: rgb(196, 194, 194);" type="text" class="form-control" id="txtDnicont" placeholder="Numero Documento" readonly>
+              <span class="input-group-text">
+                  <i class="bi bi-person text-warning"></i>
+              </span>
+          </div>
+      </div>
+      <div class="col-md-2 col-12">
+
+        <label for="txtCantidadcont" class="form-label"></label>
+        <div class="input-group">
+            <input type="number" class="form-control" id="txtCantidadcont" placeholder="Cantidad de Tratamiento">
+            <span class="input-group-text">
+              <i class="bi bi-cash-coin text-warning"></i>
+            </span>
+            
+        </div>
+
+      </div>
+            <div class="col-md-4 col-12 pt-4">
+    
+            <div class="input-group">
+                <input type="text" list="datalistOptions" class="form-control" id="txtTratamientocont" placeholder="Tratamiento">
+                <datalist id="datalistOptions">
+              
+                  <option value="Blanqueamiento Ambulatorio">Blanqueamiento Ambulatorio ($/. 350.00)</option>
+                  <option value="Blanqueamiento Consultorio">Blanqueamiento Consultorio hasta 2 sesiones($/. 450.00)</option>
+                  <option value="Blanqueamiento Consultorio Adicional">Blanqueamiento Consultorio Adicional ($/. 120.00)</option>
+                  <option value="Blanqueamiento Mixto">Blanqueamiento Mixto ($/. 550.00)</option>
+                  <option value="Cepillo InterProx Mini">Cepillo InterProx Mini ($/. 25.00)</option>
+                  <option value="Cepillo InterProx SuperMicro">Cepillo InterProx SuperMicro ($/. 25.00)</option>
+                  <option value="Cepillo Vitis Baby">Cepillo Vitis Baby ($/. 20.00)</option>
+                  <option value="Cepillo Neceser Kids">Cepillo Neceser Kids ($/. 35.00)</option>
+                  <option value="Cepillo Neceser Junior">Cepillo Neceser Junior ($/. 35.00)</option>
+                  <option value="Cepillo Vitis Duro">Cepillo Vitis Duro ($/. 20.00)</option>
+                  <option value="Cepillo Vitis Junior">Cepillo Vitis Junior ($/. 20.00)</option>
+                  <option value="Cepillo Vitis Ultrasuave">Cepillo Vitis Ultrasuave ($/. 20.00)</option>
+                  <option value="Cepillo Vitis Perio">Cepillo Vitis Perio ($/. 20.00)</option>
+                  <option value="Cepillo Vitis">Cepillo Vitis ($/. 20.00)</option>
+                  <option value="Cepillo Encias">Cepillo Encias ($/. 20.00)</option>
+                  <option value="Cepillo Orthodontic">Cepillo Orthodontic ($/. 24.00)</option>
+                  <option value="Coctel">Coctel ($/. 50.00)</option>
+                  <option value="1ER Consulta">1ER Consulta ($/. 30.00)</option>
+                  <option value="Consulta">Consulta ($. 30.00)</option>
+                  <option value="Coronas de Acetato">Coronas de Acetato ($/. 180.00)</option>
+                  <option value="Carillas x Diente con Resina">Carillas x Diente con Resina ($/. 280.00)</option>
+                  <option value="Corona de Zirconio (C/U)">Corona de Zirconio (C/U) ($/. 850.00)</option>
+                  <option value="Corona Metal Porcelana (C/U)">Corona Metal Porcelana (C/U) ($/. 650.00)</option>
+                  <option value="Control de Ortodoncia">Control de Ortodoncia ($/. 180.00)</option>50%
+                  <option value="Destartraje">Destartraje ($/. 90.00)</option>
+                  <option value="Destartraje + Profilaxis + Fluor">Destartraje + Profilaxis + Fluor ($/. 120.00)</option>
+                  <option value="Drenaje o limpieza de pus">Drenaje o limpieza de pus ($/. 150.00)</option>
+                  <option value="Extraccion">Extraccion ($/. 100.00)</option>
+                  <option value="Endodoncia Molares o Posterior">Endodoncia Molares o Posterior ($/. 450.00)</option>
+                  <option value="Endodoncia Anteriores">Endodoncia Anteriores ($/. 380.00)</option>
+                  <option value="Endodoncia Premolar">Endodoncia Premolar ($/. 420.00)</option>
+                  <option value="Exodoncia Anteriores (Simples)">Exodoncia Anteriores (Simples) ($/. 100.00)</option>
+                  <option value="Exodoncia Anteriores (Semicomplejas)">Exodoncia Anteriores (Semicomplejas) ($/. 150.00)</option>
+                  <option value="Exodoncia Posteriores (Simple)">Exodoncia Posteriores (Simple) ($/. 150.00)</option>
+                  <option value="Exodoncia Posteriores (Semicompleja)">Exodoncia Posteriores (Semicompleja) ($/. 250.00)</option>
+                  <option value="Exodoncia Terceras SUP">Exodoncia Terceras SUP ($/. 220.00)</option>
+                  <option value="Exodoncia Terceras INF">Exodoncia Terceras INF ($/. 450.00)</option>
+                  <option value="Enjuague Junior">Enjuague Junior ($/. 35.00)</option>
+                  <option value="Enjuague Ortodoncia">Enjuague Ortodoncia ($/. 35.00)</option>
+                  <option value="Enjuague Encias">Enjuague Encias ($/. 35.00)</option>
+                  <option value="Enjuague Halita">Enjuague Halita ($/. 40.00)</option>
+                  <option value="Fluor Barniz">Fluor Barniz ($/. 90.00)</option>
+                  <option value="Gingivectomia x Arcada">Gingivectomia x Arcada ($/. 450.00)</option>
+                  <option value="Incrustacion">Incrustacion ($/. 320.00)</option>
+                  <option value="Instalacion de Brackets Convencionales">Instalacion de Brackets Convencionales ($/. 800.00)</option>0 soles
+                  <option value="Instalacion de Brackets Autoligantes">Instalacion de Brackets Autoligantes ($/. 1500.00)</option>700 soles
+                  <option value="Instalacion de Brackets Esteticos">Instalacion de Brackets Esteticos ($/. 2200.00)</option>1200 soles
+                  <option value="Instalacion de Brackets Zafiro">Instalacion de Brackets Zafiro ($/. 2800.00)</option>1200 soles
+                  <option value="Operculectomia">Operculectomia ($/. 120.00)</option>
+                  <option value="Pasta Blanqueadora">Pasta Blanqueadora ($/. 28.00)</option>
+                  <option value="Pasta Ortodoncia">Pasta Ortodoncia ($/. 23.00)</option>
+                  <option value="Pasta Junior">Pasta Junior ($/. 23.00)</option>
+                  <option value="Pasta Encias">Pasta Encias ($/. 23.00)</option>
+                  <option value="Pasta Aloe Vera">Pasta Aloe Vera ($/. 23.00)</option>
+                  <option value="Pasta CPC">Pasta CPC ($/. 25.00)</option>
+                  <option value="Perno Fibra de Vidrio">Perno Fibra de Vidrio ($/. 200.00)</option>
+                  <option value="Pegada de Brackets">Pegada de Brackets ($/. 70.00)</option>50%
+                  <option value="Repegado de Brackets">Pegada de Brackets ($/. 70.00)</option>50% 
+                  <option value="Pegada de Tubo">Pegada de Tubo ($/. 90.00)</option>
+                  <option value="Period Aid 0.12% (500ml)">Period Aid 0.12% (500ml) ($/. 42.00)</option>
+                  <option value="Period Aid 0.12% (150ml)">Period Aid 0.12% (150ml) ($/. 25.00)</option>
+                  <option value="Period Aid 0.05% (500ml)">Period Aid 0.05% (500ml) ($/. 40.00)</option>
+                  <option value="Period Aid 0.05% (150ml)">Period Aid 0.05% (150ml) ($/. 25.00)</option>
+                  <option value="Placa">Placa ($/. 28.00)</option>
+                  <option value="Profilaxis">Profilaxis ($/. 100.00)</option>
+                  <option value="Protesis Total Completa (SUP/INF)">Protesis Total Completa (SUP/INF) ($/. 1700.00)</option>
+                  <option value="Protesis Total SUP">Protesis Total SUP ($/. 950.00)</option>
+                  <option value="Protesis Total INF">Protesis Total INF ($/. 950.00)</option>
+                  <option value="Protesis Flexible (C/U)">Protesis Flexible (C/U) ($/. 1600.00)</option>
+                  <option value="Protesis Flexible (1-3 piezas)">Protesis Flexible (1-3 piezas) ($/. 600.00)</option>
+                  <option value="Protesis Base Metalica">Protesis Base Metalica ($/. 1400.00)</option>
+                  <option value="Protesis Wipla">Protesis Wipla ($/. 620.00)</option>
+                  <option value="Pulpotomia"> ($/. 320.00)</option>
+                  <option value="Pulpectomia o Brix-Pulpo">Pulpectomia o Brix-Pulpo ($/. 320.00)</option>
+                  <option value="Radiografia">Radiografia ($/. 30.00)</option>
+                  <option value="Restauraciones">Restauraciones ($/. 75.00)</option>
+                  <option value="Restauraciones + Medicacion">Restauraciones con Medicacion ($/. 185.00)</option>
+                  <option value="Retratamiento Molares">Retratamiento Molares ($/. 490.00)</option>
+                  <option value="Retratamiento Anterior">Retratamiento Anterior ($/. 420.00)</option>
+                  <option value="Restauracion">Restauracion ($/. 90.00)</option>
+                  <option value="Restauracion + Medicacion">Restauracion + Medicacion ($/. 180.00)</option>
+                  <option value="Restauracion con Brix 3K">Restauracion con Brix 3K ($/. 150.00)</option>
+                  <option value="Restauracion con Rivastar">Restauracion con Rivastar ($/. 120.00)</option>
+                  <option value="Sellantes">Sellantes ($/. 80.00)</option>
+                  <option value="XEROS SPRAID">XEROS SPRAID ($/. 25.00)</option>
+                  <option value="Vitis CPC Protect">Vitis CPC Protect ($/. 35.00)</option>
+                  <option value="Vitamina C">Vitamina C ($/. 180.00)</option>
+                </datalist>
+                
+            </div>
+            <!--<button type="button" class="btn btn-primary" id="btnAddTratamiento">+</button>-->
+            
+            </div>
+            <div class="col-md-6 col-12 pt-4">
+                <select class="form-select" aria-label="Default select example" id="txtTipopago" >
+                  <option selected disabled value="">Metodo de Pago</option>
+                  <option value="Visa">Visa</option>
+                  <option value="Mastercard">Mastercard</option>
+                  <option value="Link">Link</option>
+                  <option value="Efectivo">Efectivo</option>
+                  <option value="Plin">Plin</option>  
+                  <option value="Yape">Yape</option>       
+                  <option value="Transferencia">Transferencia</option>            
+                </select>
+              </div>
+              <div class="col-md-4 col-12">
+
+                <label for="txtPago" class="form-label"></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="txtPago" placeholder="Pago(S/. )">
+                    <span class="input-group-text">
+                      <i class="bi bi-cash-coin text-warning"></i>
+                    </span>
+                    
+                </div>
+      
+              </div>
+              <div class="col-md-4 col-12">
+
+                <label for="txtTecnico" class="form-label"></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="txtTecnico" placeholder="Precio Tecnico(S/. )(Opcional)">
+                    <span class="input-group-text">
+                      <i class="bi bi-cash-coin text-warning"></i>
+                    </span>
+                    
+                </div>
+      
+              </div>
+              <div class="col-md-4  pt-3 pb-3">
+                <select class="form-select" aria-label="Default select example" id="txtDoctorcont" >
+                  <option selected disabled value="">Doctor</option>
+                  <option value="Dr. Jhon Zelada">Dr. Jhon Zelada</option>
+                  <option value="Dra. Alejandra Noriega">Dra. Alejandra Noriega</option>
+                  <option value="Dr. Angel Granda">Dr. Angel Granda</option>
+                  <option value="Dra. Madelyn Placido">Dra. Madelyn Placido</option>  
+                  <option value="Dra. Carol Vasquez">Dra. Carol Vasquez</option>          
+                  <option value="Dra. Azul Araucano">Dra. Azul Araucano</option>
+                  <option value="Dr. Hans Gamarra">Dr. Hans Gamarra</option>
+                  <option value="Dra. Rosario Araujo">Dra. Rosario Araujo</option>    
+              
+                  
+                </select>
+              </div>
+              
+           
+                        
+            
+            
+    
+            
+          <div class="d-grid col-4 mx-auto mt-3">
+            <button class="btn btn-warning btn-azul" type="button" id="btnAgregarCont"><strong>Agregar Pago</strong></button>
+            
+          </div>
+
+
+          <!--EGRESOSSSSSSSSSSSSSSSSSSSSSSSSSS-->
+          </form>
+          <br>
+          <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color"  style="color: #212F5B;">Eg<u>res</u>os</span></h1>
+          <form class="row" action="http://localhost/serviciosmiley/tratamientos/insertar-tratamiento.php?paciente=<?php echo $codigo_paciente; ?>" method="POST">
+
+            
+            <div class="col-md-3 col-12">
+    
+              
+                <label for="txtFechaegre" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Egreso</strong></label>
+                <input type="date" class="form-control" id="txtFechaegre">
+             
+            </div>
+            <div class="col-md-3 col-12 pt-4">
+    
+              
+            
+                <div class="input-group">
+                 
+                  <input type="text" class="form-control" id="txtDescripcionegre" placeholder="Descripcion de egreso">
+                  <span class="input-group-text">
+                    <i class="bi bi-card-list text-warning"></i>
+                  </span>
+                  
+                </div>
+          </div>
+
+          <div class="col-md-3  pt-3 pb-3">
+            <select class="form-select" aria-label="Default select example" id="txtTipoegre" >
+              <option selected disabled value="">Tipo de Pago</option>
+              <option value="Debito-Credito">Debito-Credito</option>
+              <option value="Efectivo">Efectivo</option>
+              <option value="Plin">Plin</option>
+              <option value="Yape">Yape</option> 
+              <option value="Transferencia">Transferencia</option> 
+              
+          
+              
+            </select>
+          </div>
+            
+              <div class="col-md-3 col-12">
+
+                <label for="txtPrecioegre" class="form-label"></label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="txtPrecioegre" placeholder="Egreso(S/. )">
+                    <span class="input-group-text">
+                      <i class="bi bi-cash-coin text-warning"></i>
+                    </span>
+                    
+                </div>
+      
+              </div>
+              
+              
+           
+                        
+            
+            
+    
+            
+          <div class="d-grid col-4 mx-auto mt-3">
+            <button class="btn btn-danger btn-azul" type="button" id="btnAgregarEgre"><strong>Agregar Egreso</strong></button>
+            
+          </div>
+          </form>
+          </div>
+        </div>
+    </div>
+
+    
+        <!--<div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+          <img src="img-costo/costo.png" class="img-fluid">
+        </div>-->
+        <form class="container pt-5">
+          <h5 class="ps-3">REGISTRO DE PAGOS</h5>
+          
+          <!-- Fila para los selects -->
+          <div class="row">
+              <!-- Selector de Doctor -->
+              <div class="col-md-4 col-12 pt-3 pb-3">
+                  <select class="form-select" id="selectDoctor" aria-label="Seleccione un Doctor">
+                      <option selected value="">Seleccione un Doctor</option>
+                  </select>
+              </div>
+              
+              <!-- Selector de Sede -->
+              <div class="col-md-4 col-12 pt-3 pb-3">
+                  <select class="form-select" id="selectSede" aria-label="Seleccione una Sede">
+                      <option selected value="">Seleccione una Sede</option>
+                  </select>
+              </div>
+          </div>
+      </form>
+              <div class="container">
+                <table class="table table-bordered" id="table-export">
+                  <thead>
+                    <tr>
+                      
+                      <th style="width: 2%; border: none;"></th>
+                      <th style="width: 2%; border: none;"></th>
+                      <th class="text-white" style="background-color: #052A99; width: 10%;">Fecha</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Historia</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Cliente</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Numero Documento</th>
+                      <th class="text-white" style="background-color: #052A99; width: 2%;">Cantidad</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Tratamiento</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Tipo de Pago</th>
+                      <th class="text-white" style="background-color: #052A99; width: 4%;">Precio Uni</th>
+                      <th class="text-white" style="background-color: #052A99; width: 4%;">Pago Cliente</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Desc. Visa</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Impuesto</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Tecnico</th>
+                      <th class="text-white" style="background-color: #052A99; width: 4%;">Ingreso Total</th>
+                      <th class="text-white" style="background-color: #052A99; width: 4%;">PagoDoctor</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Doctor</th>
+                      <th class="text-white" style="background-color: #052A99; width: 8%;">Sede</th>
+                      <th style="width: 2%; border: none;"></th>
+                      <th style="width: 2%; border: none;"></th>
+                      
+                    
+                      
+                      
+                    </tr>
+                  </thead>
+              
+                  <tbody id="tbody-contabilidad">
+                      
+                  </tbody>
+              
+                </table>
+                <!--<table class="table table-bordered" style="width: 30%; display: inline-block;">
+                  <thead>
+                      <tr>
+                          
+                          <th class="text-white text-center" style="background-color: #052A99;">Total Doctor</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody-total-doctor">
+                   
+                  </tbody>
+              </table>  
+              <table class="table table-bordered" style="width: 35%; display: inline-block;">
+                <thead>
+                    <tr>
+                        
+                        <th class="text-white text-center" style="background-color: #052A99;">Total Pago Cliente</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-total-pago">
+                
+                </tbody>
+            </table>  
+            <table class="table table-bordered" style="width: 30%; display: inline-block;">
+              <thead>
+                  <tr>
+                      
+                      <th class="text-white text-center" style="background-color: #052A99;">Total DesVisa 95%</th>
+                  </tr>
+              </thead>
+              <tbody id="tbody-total-descuento">
+                 
+              </tbody>
+          </table>  -->
+            
+            </div>
+
+         
+
+
+
+
+<!-- Modal de Confirmación para Actualización -->
+<div class="modal fade" id="modal-confirmar-actualizacion" tabindex="-1" aria-labelledby="modalConfirmarActualizacionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalConfirmarActualizacionLabel">Confirmar Actualización</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ingrese la contraseña para confirmar la actualización:</p>
+        <input type="password" id="inputPasswordActualizar" class="form-control" placeholder="Contraseña">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="btnConfirmarActualizar" class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--eliminar modal-->
+          <!-- Modal de Confirmación de Contraseña -->
+  <div class="modal fade" id="modal-confirmar-eliminacion" tabindex="-1" aria-labelledby="modalConfirmarEliminacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmarEliminacionLabel">Confirmar Eliminación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingrese la contraseña para confirmar la eliminación:</p>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="btnConfirmarEliminar" class="btn btn-primary">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!--Actualizarrrrrrrr-->
+        <div class="modal fade" id="modal-actualizarse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Paciente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">           
+                  <div class="mb-3" style="display: none;">          
+                        <input type="text" class="form-control" id="txtCodigocontActualizar" readonly>
+                  </div>         
+                  <div class="mb-3">              
+                        
+                      
+                <select class="form-select" aria-label="Default select example" id="txtSedecontActualizar" >
+                  <option selected disabled value="">Sede</option>
+                  <option value="MIRAFLORES">MIRAFLORES</option>
+                  <option value="LOS OLIVOS">LOS OLIVOS</option>
+                  
+                                  
+                </select>
+                  </div>
+                  <div class="mb-3">              
+                        
+                    <label for="txtFechacontActualizar" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Pago</strong></label>
+                    <input type="date" class="form-control" id="txtFechacontActualizar">
+                </div>
+                  <div class="mb-3 ">   
+                      <div class="input-group">
+                          <input type="number" class="form-control" id="txtHistoriacontActualizar" placeholder="Historia">
+                          <span class="input-group-text">
+                            <i class="bi bi-card-list text-warning"></i>
+                          </span>
+                        
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group">
+                      <input style="background-color: rgb(196, 194, 194);" type="text" class="form-control" id="txtClientecontActualizar" placeholder="Paciente" readonly>
+                      <span class="input-group-text">
+                          <i class="bi bi-person text-warning"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group">
+                      <input style="background-color: rgb(196, 194, 194);" type="text" class="form-control" id="txtDnicontActualizar" placeholder="Numero de Documento" readonly>
+                      <span class="input-group-text">
+                          <i class="bi bi-person text-warning"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group">
+                      <input type="number" class="form-control" id="txtCantidadcontActualizar" placeholder="Cantidad">
+                      <span class="input-group-text">
+                          <i class="bi bi-person text-warning"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="mb-3 ">                
+                      <div class="input-group">
+                          <input type="text" list="datalistOptions" class="form-control" id="txtTratamientocontActualizar" placeholder="Tratamiento">
+                          <datalist id="datalistOptions">
+              
+                            <option value="Blanqueamiento Ambulatorio">Blanqueamiento Ambulatorio ($/. 350.00)</option>
+                            <option value="Blanqueamiento Consultorio">Blanqueamiento Consultorio hasta 2 sesiones($/. 450.00)</option>
+                            <option value="Blanqueamiento Consultorio Adicional">Blanqueamiento Consultorio Adicional ($/. 120.00)</option>
+                            <option value="Blanqueamiento Mixto">Blanqueamiento Mixto ($/. 550.00)</option>
+                            <option value="Cepillo InterProx Mini">Cepillo InterProx Mini ($/. 25.00)</option>
+                            <option value="Cepillo InterProx SuperMicro">Cepillo InterProx SuperMicro ($/. 25.00)</option>
+                            <option value="Cepillo Vitis Baby">Cepillo Vitis Baby ($/. 20.00)</option>
+                            <option value="Cepillo Neceser Kids">Cepillo Neceser Kids ($/. 35.00)</option>
+                            <option value="Cepillo Neceser Junior">Cepillo Neceser Junior ($/. 35.00)</option>
+                            <option value="Cepillo Vitis Duro">Cepillo Vitis Duro ($/. 20.00)</option>
+                            <option value="Cepillo Vitis Junior">Cepillo Vitis Junior ($/. 20.00)</option>
+                            <option value="Cepillo Vitis Ultrasuave">Cepillo Vitis Ultrasuave ($/. 20.00)</option>
+                            <option value="Cepillo Vitis Perio">Cepillo Vitis Perio ($/. 20.00)</option>
+                            <option value="Cepillo Vitis">Cepillo Vitis ($/. 20.00)</option>
+                            <option value="Cepillo Encias">Cepillo Encias ($/. 20.00)</option>
+                            <option value="Cepillo Orthodontic">Cepillo Orthodontic ($/. 24.00)</option>
+                            <option value="Coctel">Coctel ($/. 50.00)</option>
+                            <option value="1ER Consulta">1ER Consulta ($/. 30.00)</option>
+                            <option value="Consulta">Consulta ($. 30.00)</option>
+                            <option value="Coronas de Acetato">Coronas de Acetato ($/. 180.00)</option>
+                            <option value="Carillas x Diente con Resina">Carillas x Diente con Resina ($/. 280.00)</option>
+                            <option value="Corona de Zirconio (C/U)">Corona de Zirconio (C/U) ($/. 850.00)</option>
+                            <option value="Corona Metal Porcelana (C/U)">Corona Metal Porcelana (C/U) ($/. 650.00)</option>
+                            <option value="Control de Ortodoncia">Control de Ortodoncia ($/. 180.00)</option>
+                            <option value="Destartraje">Destartraje ($/. 90.00)</option>
+                            <option value="Destartraje + Profilaxis + Fluor">Destartraje + Profilaxis + Fluor ($/. 120.00)</option>
+                            <option value="Drenaje o limpieza de pus">Drenaje o limpieza de pus ($/. 150.00)</option>
+                            <option value="Extraccion">Extraccion ($/. 100.00)</option>
+                            <option value="Endodoncia Molares o Posterior">Endodoncia Molares o Posterior ($/. 450.00)</option>
+                            <option value="Endodoncia Anteriores">Endodoncia Anteriores ($/. 380.00)</option>
+                            <option value="Endodoncia Premolar">Endodoncia Premolar ($/. 420.00)</option>
+                            <option value="Exodoncia Anteriores (Simples)">Exodoncia Anteriores (Simples) ($/. 100.00)</option>
+                            <option value="Exodoncia Anteriores (Semicomplejas)">Exodoncia Anteriores (Semicomplejas) ($/. 150.00)</option>
+                            <option value="Exodoncia Posteriores (Simple)">Exodoncia Posteriores (Simple) ($/. 150.00)</option>
+                            <option value="Exodoncia Posteriores (Semicompleja)">Exodoncia Posteriores (Semicompleja) ($/. 250.00)</option>
+                            <option value="Exodoncia Terceras SUP">Exodoncia Terceras SUP ($/. 220.00)</option>
+                            <option value="Exodoncia Terceras INF">Exodoncia Terceras INF ($/. 450.00)</option>
+                            <option value="Enjuague Junior">Enjuague Junior ($/. 35.00)</option>
+                            <option value="Enjuague Ortodoncia">Enjuague Ortodoncia ($/. 35.00)</option>
+                            <option value="Enjuague Encias">Enjuague Encias ($/. 35.00)</option>
+                            <option value="Enjuague Halita">Enjuague Halita ($/. 40.00)</option>
+                            <option value="Fluor Barniz">Fluor Barniz ($/. 90.00)</option>
+                            <option value="Gingivectomia x Arcada">Gingivectomia x Arcada ($/. 450.00)</option>
+                            <option value="Incrustacion">Incrustacion ($/. 320.00)</option>
+                            <option value="Instalacion de Brackets Convencionales">Instalacion de Brackets Convencionales ($/. 800.00)</option>
+                            <option value="Instalacion de Brackets Autoligantes">Instalacion de Brackets Autoligantes ($/. 1500.00)</option>
+                            <option value="Instalacion de Brackets Esteticos">Instalacion de Brackets Esteticos ($/. 2200.00)</option>
+                            <option value="Instalacion de Brackets Zafiro">Instalacion de Brackets Zafiro ($/. 2800.00)</option>
+                            <option value="Operculectomia">Operculectomia ($/. 120.00)</option>
+                            <option value="Pasta Blanqueadora">Pasta Blanqueadora ($/. 28.00)</option>
+                            <option value="Pasta Ortodoncia">Pasta Ortodoncia ($/. 23.00)</option>
+                            <option value="Pasta Junior">Pasta Junior ($/. 23.00)</option>
+                            <option value="Pasta Encias">Pasta Encias ($/. 23.00)</option>
+                            <option value="Pasta Aloe Vera">Pasta Aloe Vera ($/. 23.00)</option>
+                            <option value="Pasta CPC">Pasta CPC ($/. 25.00)</option>
+                            <option value="Perno Fibra de Vidrio">Perno Fibra de Vidrio ($/. 200.00)</option>
+                            <option value="Pegada de Brackets">Pegada de Brackets ($/. 70.00)</option>
+                            <option value="Repegado de Brackets">Pegada de Brackets ($/. 70.00)</option>
+                            <option value="Pegada de Tubo">Pegada de Tubo ($/. 90.00)</option>
+                            <option value="Period Aid 0.12% (500ml)">Period Aid 0.12% (500ml) ($/. 42.00)</option>
+                            <option value="Period Aid 0.12% (150ml)">Period Aid 0.12% (150ml) ($/. 25.00)</option>
+                            <option value="Period Aid 0.05% (500ml)">Period Aid 0.05% (500ml) ($/. 40.00)</option>
+                            <option value="Period Aid 0.05% (150ml)">Period Aid 0.05% (150ml) ($/. 25.00)</option>
+                            <option value="Placa">Placa ($/. 28.00)</option>
+                            <option value="Profilaxis">Profilaxis ($/. 100.00)</option>
+                            <option value="Protesis Total Completa (SUP/INF)">Protesis Total Completa (SUP/INF) ($/. 1700.00)</option>
+                            <option value="Protesis Total SUP">Protesis Total SUP ($/. 950.00)</option>
+                            <option value="Protesis Total INF">Protesis Total INF ($/. 950.00)</option>
+                            <option value="Protesis Flexible (C/U)">Protesis Flexible (C/U) ($/. 1600.00)</option>
+                            <option value="Protesis Flexible (1-3 piezas)">Protesis Flexible (1-3 piezas) ($/. 600.00)</option>
+                            <option value="Protesis Base Metalica">Protesis Base Metalica ($/. 1400.00)</option>
+                            <option value="Protesis Wipla">Protesis Wipla ($/. 620.00)</option>
+                            <option value="Pulpotomia"> ($/. 320.00)</option>
+                            <option value="Pulpectomia o Brix-Pulpo">Pulpectomia o Brix-Pulpo ($/. 320.00)</option>
+                            <option value="Radiografia">Radiografia ($/. 30.00)</option>
+                            <option value="Restauraciones">Restauraciones ($/. 75.00)</option>
+                            <option value="Restauraciones + Medicacion">Restauraciones con Medicacion ($/. 185.00)</option>
+                            <option value="Retratamiento Molares">Retratamiento Molares ($/. 490.00)</option>
+                            <option value="Retratamiento Anterior">Retratamiento Anterior ($/. 420.00)</option>
+                            <option value="Restauracion">Restauracion ($/. 90.00)</option>
+                            <option value="Restauracion + Medicacion">Restauracion + Medicacion ($/. 180.00)</option>
+                            <option value="Restauracion con Brix 3K">Restauracion con Brix 3K ($/. 150.00)</option>
+                            <option value="Restauracion con Rivastar">Restauracion con Rivastar ($/. 120.00)</option>
+                            <option value="Sellantes">Sellantes ($/. 80.00)</option>
+                            <option value="XEROS SPRAID">XEROS SPRAID ($/. 25.00)</option>
+                            <option value="Vitis CPC Protect">Vitis CPC Protect ($/. 35.00)</option>
+                            <option value="Vitamina C">Vitamina C ($/. 180.00)</option>
+                          </datalist>
+                          
+                      </div>
+                  </div>
+                  <div class="mb-3">                             
+                      <select class="form-select" aria-label="Default select example" id="txtTipopagoActualizar" >
+                          <option selected disabled value="">Doctor</option>
+                          <option value="Visa">Visa</option>
+                          <option value="Mastercard">Mastercard</option>
+                          <option value="Link">Link</option>
+                          <option value="Efectivo">Efectivo</option>
+                          <option value="Plin">Plin</option>  
+                          <option value="Yape">Yape</option>       
+                          <option value="Transferencia">Transferencia</option>                  
+                        </select>
+                  </div>
+                  <div class="mb-3">                             
+                      <label for="txtPagoActualizar" class="form-label"></label>
+                      <div class="input-group">
+                          <input type="number" class="form-control" id="txtPagoActualizar" placeholder="Pago(S/. )">
+                          <span class="input-group-text">
+                            <i class="bi bi-cash-coin text-warning"></i>
+                          </span>
+                          
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtTecnicoActualizar" class="form-label"></label>
+                    <div class="input-group">
+                      <input type="number" class="form-control" id="txtTecnicoActualizar" placeholder="Precio Tecnico(S/. )(Opcional)">
+                      <span class="input-group-text">
+                        <i class="bi bi-cash-coin text-warning"></i>
+                      </span>
+                      
+                  </div>
+
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example" id="txtDoctorcontActualizar" >
+                      <option selected disabled value="">Doctor</option>
+                      <option value="Dr. Jhon Zelada">Dr. Jhon Zelada</option>
+                      <option value="Dra. Alejandra Noriega">Dra. Alejandra Noriega</option>
+                      <option value="Dr. Angel Granda">Dr. Angel Granda</option>
+                      <option value="Dra. Madelyn Placido">Dra. Madelyn Placido</option>  
+                      <option value="Dra. Carol Vasquez">Dra. Carol Vasquez</option>          
+                      <option value="Dra. Azul Araucano">Dra. Azul Araucano</option>
+                      <option value="Dr. Hans Gamarra">Dr. Hans Gamarra</option>
+                      <option value="Dra. Rosario Araujo">Dra. Rosario Araujo</option>    
+                  
+                      
+                    </select>
+
+                  </div>
+                
+              </div>
+            
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizarConta">Actualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--EGRESOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS DE CONTABULIDAD-->
+      <div class="container pt-5" >
+                <h5 class="ps-3">REGISTRO DE EGRESO </h5>
+                
+                
+              </div>
+          
+              <div class="container table-responsive">
+              <table class="table table-bordered" id="tabla-egreso">
+                <thead>
+                  <tr>
+                    
+                    <th style="width: 2%; border: none;"></th>
+                    <th class="text-white" style="background-color: #992d05; width: 20%;">Fecha de Egreso</th>
+                    <th class="text-white" style="background-color: #992d05; width: 38%;">Descripcion</th>
+                    <th class="text-white" style="background-color: #992d05; width: 18%;">Tipo de Pago</th>
+                    <th class="text-white" style="background-color: #992d05; width: 20%;">Monto de Egreso</th>
+                    
+                    <th style="width: 2%; border: none;"></th>
+                    
+                  
+                    
+                    
+                  </tr>
+                </thead>
+            
+                <tbody id="tbody-egreso">
+                    
+                </tbody>
+            
+              </table>
+
+              <!--tablas totales-->
+              <div class="text-end">
+              <table id="tabla-total-contabilidad" class="table table-bordered" style="width: 35%; display: inline-block;">
+                <thead>
+                    <tr>
+                        
+                        <th class="text-white text-center" style="background-color: #052A99;">Total de Ingresos</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-total-contabilidad">
+                    <!-- Aquí se mostrará la suma total de contabilidad -->
+                </tbody>
+            </table>  
+              <table id="tabla-total-egreso" class="ms-auto table table-bordered" style="width: 30%; display: inline-block;">
+                <thead>
+                    <tr>
+                        <th class="text-white" style="background-color: #992d05;">Total de Egresos</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-total-egreso">
+                    <!-- Aquí se mostrará la suma total de egresos -->
+                </tbody>
+            </table>
+
+            <table id="tabla-diferencia" class="ms-auto table table-bordered" style="width: 30%; display: inline-block;">
+              <thead>
+                  <tr>
+                      <th class="text-white text-center" style="background-color: #005e2a;">Ganancia Total</th>
+                  </tr>
+              </thead>
+              <tbody id="tbody-diferencia">
+                  <!-- Aquí se mostrará la diferencia entre el total de contabilidad y el total de egresos -->
+              </tbody>
+          </table>
+            </div>
+
+          </div>
+
+          <!--MODAL ACTUALIZAR DE CONTRASEÑA-->
+          <div class="modal fade" id="modal-confirmar-actualizacion-egreso" tabindex="-1" aria-labelledby="modalConfirmarActualizacionLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalConfirmarActualizacionLabel">Confirmar Actualización</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ingrese la contraseña para confirmar la actualización:</p>
+                        <input type="password" id="inputContraseñaActualizar" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btnConfirmarActualizarEgreso" class="btn btn-primary">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <!-- Modal de Confirmación de Contraseña -->
+  <div class="modal fade" id="modal-confirmar-eliminacion-egreso" tabindex="-1" aria-labelledby="modalConfirmarEliminacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmarEliminacionLabel">Confirmar Eliminación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingrese la contraseña para confirmar la eliminación:</p>
+          <input type="password" id="inputContraseña" class="form-control" placeholder="Contraseña">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="btnConfirmarEliminarEgreso" class="btn btn-primary">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!--Actualizarrrrrrrr-->
+        <div class="modal fade" id="modal-actualizarseegreso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Egreso</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">           
+                  <div class="mb-3">          
+                        <input type="text" class="form-control" id="txtCodigoegreActualizar" readonly>
+                  </div>             
+                  <div class="mb-3">              
+                        
+                      
+                    <label for="txtFechaegre" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Egreso</strong></label>
+                    <input type="date" class="form-control" id="txtFechaegreActualizar">
+                  </div>
+                  <div class="mb-3">              
+                        
+                    <div class="input-group">
+                  
+                      <input type="text" class="form-control" id="txtDescripcionegreActualizar" placeholder="Descripcion de egreso">
+                      <span class="input-group-text">
+                        <i class="bi bi-card-list text-warning"></i>
+                      </span>
+                      
+                    </div>
+                </div>
+
+
+                <div class="mb-3 ">   
+                      <select class="form-select" aria-label="Default select example" id="txtTipoegreActualizar" >
+                      <option selected disabled value="">Tipo de Pago</option>
+                      <option value="Debito-Credito">Debito-Credito</option>
+                      <option value="Efectivo">Efectivo</option>
+                      <option value="Plin">Plin</option>
+                      <option value="Yape">Yape</option>  
+                      
+                  
+                      
+                      </select> 
+                </div>
+
+
+
+                  <div class="mb-3 ">   
+                    <label for="txtPrecioegre" class="form-label"></label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="txtPrecioegreActualizar" placeholder="Egreso(S/. )">
+                        <span class="input-group-text">
+                          <i class="bi bi-cash-coin text-warning"></i>
+                        </span>
+                        
+                    </div>
+                  </div>
+                  
+                
+              </div>
+            
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizarEgre">Actualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="container pt-2">
+          <button onclick="exportAllToExcel()" class="btn btn-success">Descargar Excel</button>
+        </div>
+
+    
+      
+      
+      
+      
+      
+      
+      <script>
+          function actualizarDiferencia() {
+            let diferencia = totalIngresostotal - totalEgresos;
+            $("#tbody-diferencia").html("<tr><td class='text-center'>S/. " + diferencia.toFixed(2) + "</td></tr>");
+        }
+    </script>
+     <script>
+      function exportAllToExcel() {
+          // Crear un nuevo libro de Excel
+          var wb = XLSX.utils.book_new();
+          // Seleccionar las tablas para exportar
+          var tables = ['#table-export', '#tabla-egreso', '#tabla-total-contabilidad', '#tabla-total-egreso', '#tabla-diferencia'];
+          var sheetNames = ['Pagos', 'Egresos', 'Total Contabilidad', 'Total Egresos', 'Ganancia Total'];
+          
+          // Recorrer cada tabla para crear hojas de Excel
+          tables.forEach((selector, index) => {
+              // Seleccionar la tabla
+              var tableElement = document.querySelector(selector);
+              // Verificar si existe la tabla antes de procesarla
+              if (tableElement) {
+                  // Crear una hoja a partir de la tabla
+                  var ws = XLSX.utils.table_to_sheet(tableElement);
+                  // Añadir la hoja al libro con el nombre correspondiente
+                  XLSX.utils.book_append_sheet(wb, ws, sheetNames[index]);
+              }
+          });
+  
+          // Descargar el archivo Excel con un nombre específico
+          XLSX.writeFile(wb, 'registro_completo.xlsx');
+      }
+  </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- CDN de Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!--<script src="js/procedimiento.js"></script>-->
+    
+        
+    
+    <script src="js/contabilidad.js"></script>
+    <script src="js/egreso.js"></script>
+    <script src="js/excel.js"></script>
+   
+</body>
+</html>

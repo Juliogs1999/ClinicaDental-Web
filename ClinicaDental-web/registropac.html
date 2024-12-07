@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Registro Paciente</title>
+    <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="smileyfondo.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <nav>
+  <div class="container navbar bn-color sticky-top">
+    <a class="navbar-brand bn-color" >
+      <img src="img/logo-smiley-principal.png" alt="" class="img-fluid" >
+    </a>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link " style="color: #212F5B;" target="_blank" href="https://api.whatsapp.com/send?phone=51946455607"><i class="bi bi-whatsapp text-warning"></i></i> <strong class="text-white">946 455 607</strong> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " style="color: #212F5B;" href="#"><i class="bi bi-envelope-fill text-warning"></i> <strong class="text-white">smileyconsultorios@gmail.com</strong></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-warning" href="usuario.html"><i class="bi bi-caret-left-square"></i> <strong>Volver</strong></a>
+      </li>
+      &nbsp;
+      <li class="nav-item">
+        <a class="btn btn-primary" style="color: #212F5B;" href="costo-formulario.html"><i class="bi bi-building"></i> <strong>Presupuesto</strong></a>
+      </li>&nbsp;
+      <li class="nav-item">
+        <a class="btn btn-success" style="color: #212F5B;" href="contabilidad.html"><i class="bi bi-building"></i> <strong>Contabilidad</strong></a>
+      </li>
+      &nbsp;
+       <li class="nav-item">
+        <!--<a class="btn btn-outline-danger" href="index.html"><i class="bi bi-caret-left-square-fill"></i> <strong>Volver</strong></a>--> 
+         <button id="logoutBtn" class="btn btn-danger">Cerrar sesión</button>
+       </li>
+      
+      
+     </ul>
+  <div>
+ </nav>
+ <div class="container pt-5 pb-5 letra-roboto" >
+  <div class="row justify-content-evenly">
+    <div class="col-md-2 col-4"><img src="img/conta-azul.png" class="img-fluid" alt="" style="height: 100%;"></div>
+    <div class="col-md-10 col-8">
+      <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color">P<u>acient</u>e</span></h1>
+      <br>
+      <h4>Ingrese sus datos en los campos seleccionados y nos pondremos en contacto con usted.</h4>
+      <form class="row" action="http://localhost/serviciosmiley/paciente.php" method="post" enctype="multipart/form-data">
+        <div class="col-md-6 col-12">
+
+          <label for="txtNombre" class="form-label"></label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="txtNombre" placeholder="Nombre">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-warning"></i>
+              </span>
+              
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-12">
+          <label for="txtApellido" class="form-label"></label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="txtApellido" placeholder="Apellido" >
+              <span class="input-group-text">
+                 <i class="bi bi-person-fill text-warning"></i>
+              </span>
+          </div>
+        </div>
+
+        
+
+        
+
+        <div class="pt-4 col-md-6 col-12">
+          <select class="form-select" aria-label="Default select example" id="txtCorreo" >
+            <option selected disabled value="">Tipo de Documento</option>
+            <option value="DNI">DNI</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Carnet de Extranjeria">Carnet de Extranjeria</option>
+          
+            
+          </select>
+        </div>
+
+
+
+
+
+        <div class="col-md-6 col-12">
+
+          <label for="txtDni" class="form-label"></label>
+          <div class="input-group">
+              <input type="number" class="form-control"  id="txtDni" placeholder="Dni Paciente">
+              <span class="input-group-text">
+                <i class="bi bi-keyboard-fill text-warning"></i>
+              </span>
+              
+          </div>
+
+        </div>
+        <div class="col-md-6 col-12">
+          <label for="txtTelefono" class="form-label"></label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="txtTelefono"  placeholder="Telefono o Whatsapp" >
+            <span class="input-group-text">
+              <i class="bi bi-telephone-fill text-warning"></i>
+            </span>
+          </div>
+          
+        </div>
+        
+        <div class="pt-4 col-md-6 col-12">
+          <select class="form-select" aria-label="Default select example" id="txtSede">
+            <option selected disabled value="">Sede Atendida</option>
+            <option value="Los Olivos">Los Olivos</option>
+            <option value="Miraflores">Miraflores</option>
+           
+            
+          </select>
+        </div>
+        <div class="col-md-6 col-12">
+          <label for="txtDireccion" class="form-label"></label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="txtDireccion"  placeholder="Direccion Paciente(OPCIONAL)" >
+            <span class="input-group-text">
+              <i class="bi bi-geo-alt-fill text-warning"></i>
+            </span>
+          </div>
+          
+        </div>
+
+        
+        <div class="pt-4 col-md-6 col-12">
+          <select class="form-select" aria-label="Default select example" id="txtEspecialidad" >
+            <option selected disabled value="">Especialidad</option>
+            <option value="Consulta General">Consulta General</option>
+            <option value="Ortodoncia">Ortodoncia</option>
+            <option value="Odontopediatria">Odontopediatria</option>
+            <option value="Implantologia">Implantologia</option>
+            <option value="Endodoncia">Endodoncia</option>        
+            <option value="Rehabilitacion Oral">Rehabilitacion Oral</option>
+            <option value="Estetica Dental y Restauradora">Estetica Dental y Restauradora</option>
+            <option value="Cirugia Bucal">Cirugia Bucal</option>
+        
+            
+          </select>
+        </div>
+      
+        <div class="col-md-3 col-12 pt-3">
+
+          <label for="txtFechanac" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Nacimiento</strong></label>
+          <input type="date" class="form-control" id="txtFechanac">
+        </div>
+
+        <div class="col-md-3 col-12 pt-3">
+
+          <label for="txtFecha" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Apertura de Historia</strong></label>
+          <input type="date" class="form-control" id="txtFecha">
+        </div>
+        <div class="col-md-3 col-12 pt-3">
+          
+          <label for="txtFechafin" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Ultima Atención</strong></label>
+          <input type="date" class="form-control" id="txtFechafin">
+        </div>
+
+        <div class="col-md-3 col-12 pt-3">
+          
+          <label for="txtFechalimpieza" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Limpieza</strong></label>
+          <input type="date" class="form-control" id="txtFechalimpieza">
+        </div>
+        
+        <!--<div class="col-md-6 col-12">
+          <label for="txtImg" class="form-label"></label>
+          <input class="form-control" type="file" id="txtImg" name="txtImg">
+          
+      </div>
+      <div class="col-md-6 col-12">
+        <label for="txtImg2" class="form-label"></label>
+        <input class="form-control" type="file" id="txtImg2" name="txtImg2">
+        
+    </div>-->
+  
+    <div class="col-12 pt-3"> <label class="form-label">&nbsp;&nbsp;&nbsp;<strong>Datos del Apoderaro(Opcional)</strong></label></div>
+   
+    <div class="col-md-6 col-12">
+
+      
+      <div class="input-group">
+          <input type="text" class="form-control" id="txtNombrePadre" placeholder="Nombre y Apellido del Apoderado">
+          <span class="input-group-text">
+            <i class="bi bi-person-fill text-warning"></i>
+          </span>
+          
+      </div>
+
+    </div>
+    <div class="col-md-6 col-12">
+
+      <!--<label for="txtDniPadre" class="form-label"></label>-->
+      <div class="input-group">
+          <input type="number" class="form-control" id="txtDniPadre" placeholder="DNI del Apoderado">
+          <span class="input-group-text">
+            <i class="bi bi-keyboard-fill text-warning"></i>
+          </span>
+          
+      </div>
+
+    </div>
+        
+        
+
+        
+        
+        <!--<div class="col-md-6 col-12 pt-3">
+          <label for="" class="form-label">&nbsp;&nbsp;&nbsp;<strong>¿El Paciente se Atendio?</strong></label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="seAtendio" id="siAtendio" value="SI">
+            <label class="form-check-label" for="siAtendio">
+              Sí
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="seAtendio" id="noAtendio" value="NO">
+            <label class="form-check-label" for="noAtendio">
+              No
+            </label>
+          </div>
+        </div>-->
+
+        <div class="col-12 pb-3 pt-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checkbox" >
+            <label class="form-check-label" >
+              Acepto los <a href="terminos.html" target="_blank"> Terminos y Condiciones</a> para el Tratamiento de Datos Personales
+            </label>
+          </div>
+        </div>
+        <div class="d-grid col-4 mx-auto">
+          <button class="btn btn-warning btn-azul" type="button" id="btnAgregarPaciente"><strong>Registrar</strong></button>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+   <div class="container">
+        <h2 class="clasfw-bolder fs-1">Datos del <span class="c-color">P<u>acient</u>e</span></h2>
+        <div class="col-md-5 col-12 pb-3 pt-3">
+          <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" id="txtBusqueda" placeholder="Buscar por Nombre o Apellido o Historia Clinica" aria-label="Search">
+          <button class="btn btn-outline-warning" type="submit">Buscar</button>
+          </form>
+        </div>
+        
+        <table class="table table-bordered ">
+          <thead>
+            <tr class="sticky-top">
+              <th class="text-white" style="background-color: #052A99;"></th>
+              <th class="text-warning boton-mano" id="th-codigo" style="background-color: #052A99;">Historia Clinica</th>
+              <th class="text-white" style="background-color: #052A99;">Nombre</th>
+              <th class="text-white" style="background-color: #052A99;">Apellido</th>
+              <th class="text-white" style="background-color: #052A99;">Tipo de Documento</th> 
+              <th class="text-white" style="background-color: #052A99;">Dni</th>
+              <th class="text-white" style="background-color: #052A99;">Fecha de Nacimiento</th>
+             <!--<th class="text-white" style="background-color: #052A99;">Telefono</th> 
+              <th class="text-white" style="background-color: #052A99;">Sede</th>                                 
+              <th class="text-white" style="background-color: #052A99;">Dirección</th>
+              <th class="text-white" style="background-color: #052A99;">Especialidad</th>
+              <th class="text-white" style="background-color: #052A99;">Fecha de Nacimiento</th>
+              <th class="text-white" style="background-color: #052A99;">Apertura de Historia</th>
+              <th class="text-white boton-mano" id="th-ultima-atencion" style="background-color: #052A99;">Ultima Atención</th>
+              <th class="text-white boton-mano" id="th-fecha-limpieza" style="background-color: #052A99;">Fecha de Limpieza</th>
+              <th class="text-white" style="background-color: #052A99;">Imagen</th>    
+              <th class="text-white" style="background-color: #052A99;">Tratamiento</th>
+              <th class="text-white boton-mano" id="th-se-atendio" style="background-color: #052A99;">¿Se atendio?</th>    -->       
+              <th class="text-white" style="background-color: #052A99;"></th>
+              
+              
+              
+            </tr>
+          </thead>
+      
+          <tbody id="tbody-paciente">
+              
+          </tbody>
+      
+        </table>
+      
+      </div>
+      <div class="modal fade" id="modal-actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Paciente</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">           
+                <div class="mb-3">          
+                      <input type="text" class="form-control" id="txtCodigoActualizar" readonly>
+                </div>             
+                <div class="mb-3 input-group">              
+                      <input type="text" class="form-control" id="txtNombreActualizar" placeholder="Nombre">  
+                      <span class="input-group-text">
+                        <i class="bi bi-person-fill text-warning"></i>
+                      </span>
+                </div>
+                <div class="mb-3 input-group">                
+                      <input type="text" class="form-control" id="txtApellidoActualizar" placeholder="Apellido">  
+                      <span class="input-group-text">
+                        <i class="bi bi-person-fill text-warning"></i>
+                      </span>           
+                </div>
+                
+                <div class="mb-3 input-group">   
+                  <select class="form-select" aria-label="Default select example" id="txtCorreoActualizar" >
+                    <option selected disabled value="">Tipo de Documento</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Carnet de Extranjeria">Carnet de Extranjeria</option>
+                  
+                    
+                  </select>     
+                </div>
+                <div class="mb-3 input-group">                             
+                  <input type="number" class="form-control" id="txtDniActualizar" placeholder="Dni">   
+                  <span class="input-group-text">
+                    <i class="bi bi-keyboard-fill text-warning"></i>
+                  </span>      
+              </div>
+                <div class="mb-3 input-group">   
+                  <input type="text" class="form-control" id="txtTelefonoActualizar" placeholder="Telefono o Whatsapp">   
+                  <span class="input-group-text">
+                    <i class="bi bi-telephone-fill text-warning"></i>
+                  </span>   
+                </div>
+                <div class="mb-3">   
+                <!--<input type="text" class="form-control" id="txtSedeActualizar" placeholder="Sede Atendida">   -->
+                  <select class="form-select" aria-label="Default select example" id="txtSedeActualizar">
+                    <option selected disabled value="">Sede Atendida</option>
+                    <option value="LOS OLIVOS">LOS OLIVOS</option>
+                    <option value="MIRAFLORES">MIRAFLORES</option>
+                  
+                    
+                  </select>   
+                </div>
+                <div class="mb-3 input-group">    
+                  <input type="text" class="form-control" id="txtDireccionActualizar" placeholder="Direccion"> 
+                  <span class="input-group-text">
+                    <i class="bi bi-geo-alt-fill text-warning"></i>
+                  </span>    
+                </div>
+               
+                <div class="mb-3">  
+                  <!--<input type="text" class="form-control" id="txtEspecialidadActualizar" placeholder="Especialidad">  -->
+                  <select class="form-select" aria-label="Default select example" id="txtEspecialidadActualizar" >
+                    <option selected disabled value="">Especialidad</option>
+                    <option value="Consulta General">Consulta General</option>
+                    <option value="Ortodoncia">Ortodoncia</option>
+                    <option value="Odontopediatria">Odontopediatria</option>
+                    <option value="Implantologia">Implantologia</option>
+                    <option value="Endodoncia">Endodoncia</option>        
+                    <option value="Rehabilitacion Oral">Rehabilitacion Oral</option>
+                    <option value="Estetica Dental y Restauradora">Estetica Dental y Restauradora</option>
+                    <option value="Cirugia Bucal">Cirugia Bucal</option>
+                
+                    
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="txtFechanac" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha De Nacimiento</strong></label>                              
+                  <input type="date" class="form-control" id="txtFechanacActualizar">   
+                </div>
+                <div class="mb-3">
+                  <label for="txtFecha" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha Atendida</strong></label>                              
+                  <input type="date" class="form-control" id="txtFechaActualizar">   
+                </div>
+                <div class="mb-3">
+                  <label for="txtFechafin" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Ultima Atención</strong></label>                              
+                  <input type="date" class="form-control" id="txtFechafinActualizar">   
+                </div>
+                <div class="mb-3">
+                  <label for="txtFechalimpieza" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha de Limpieza</strong></label>                              
+                  <input type="date" class="form-control" id="txtFechalimpiezaActualizar">   
+                </div>
+
+                
+                <!--<div class="mb-3">
+                  <label class="form-label"></label>
+                  <a id="enlaceImgActualizar" href="#" target="_blank">Sin imagen</a>
+                  <input class="form-control" type="file" id="txtImgActualizar" name="txtImgActualizar">
+                  
+                 
+                  
+              </div>
+              <div class="mb-3">
+                <label class="form-label"></label>
+                <a id="enlaceImg2Actualizar" href="#" target="_blank">Sin imagen</a>
+                <input class="form-control" type="file" id="txtImg2Actualizar" name="txtImg2Actualizar">
+                
+            </div>-->
+
+
+
+                
+            <div class="mb-3 input-group">              
+              <input type="text" class="form-control" id="txtNombrePadreActualizar" placeholder="Nombre y Apellido del Apoderado">  
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-warning"></i>
+              </span>
+          </div>
+          <div class="mb-3 input-group">              
+            <input type="number" class="form-control" id="txtDniPadreActualizar" placeholder="DNI del Apoderado">  
+            <span class="input-group-text">
+              <i class="bi bi-keyboard-fill text-warning"></i>
+            </span>
+        </div>
+
+
+            </div>
+          
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCerrar">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizar">Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    <footer class="container-fluid bn-color text-center text-white">@2023 Todos los derechos reservado | Consultorio Odontológico Smiley</footer>
+    <!-- Agrega los enlaces a los archivos JS de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- CDN de Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+    <script src="js/paciente.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+          const confirmLogout = confirm('¿Estás seguro de que deseas Cerrar Sesión?');
+          if (confirmLogout) {
+            sessionStorage.clear();
+              window.location.href = 'index.html';
+          } else {
+              // El usuario canceló el cierre de sesión
+              window.location.href = 'login.html';
+              // Puedes agregar aquí alguna acción adicional si es necesario
+          }
+      });
+  </script>
+  <!--<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // Obtener el input de fecha
+        var fechaInput = document.getElementById('txtFecha');
+
+        // Modificar el placeholder del campo de fecha
+        fechaInput.setAttribute('placeholder', 'Ingrese la fecha');
+    });
+</script>-->
+<script>
+  // Variables para controlar el tipo de ordenamiento
+  var ordenCodigoAscendente = true; // Por defecto, se ordena por Código de forma ascendente
+  var ordenUltimaAtencionAscendente = false; // Por defecto, se ordena por Última Atención de forma descendente
+
+  // Script para ordenar la tabla por Historia Clínica al hacer clic en el encabezado
+  document.getElementById("th-codigo").addEventListener("click", function() {
+      // Cambiar el tipo de ordenamiento
+      ordenCodigoAscendente = !ordenCodigoAscendente;
+      // Llamar a la función de ordenamiento
+      sortTableByCodigo();
+  });
+
+  // Script para ordenar la tabla por Última Atención al hacer clic en el encabezado
+  document.getElementById("th-ultima-atencion").addEventListener("click", function() {
+      // Cambiar el tipo de ordenamiento
+      ordenUltimaAtencionAscendente = !ordenUltimaAtencionAscendente;
+      // Llamar a la función de ordenamiento
+      sortTableByUltimaAtencion();
+  });
+
+  // Función para ordenar la tabla por Código
+  function sortTableByCodigo() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("tbody-paciente");
+      switching = true;
+      while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 0; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = parseInt(rows[i].getElementsByTagName("td")[0].innerHTML); // Convertir a entero para comparar numéricamente
+             y = parseInt(rows[i + 1].getElementsByTagName("td")[0].innerHTML);
+             if (x > y) {
+                shouldSwitch = true;
+                break;
+            }
+        }
+          if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+          }
+      }
+  }
+
+  // Función para ordenar la tabla por Última Atención
+  function sortTableByUltimaAtencion() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("tbody-paciente");
+      switching = true;
+      while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 0; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("td")[10]; // Índice correspondiente a Última Atención
+              y = rows[i + 1].getElementsByTagName("td")[10]; // Índice correspondiente a Última Atención
+              // Se asume que las fechas están en formato yyyy-mm-dd, para compararlas correctamente
+              if ((ordenUltimaAtencionAscendente && x.innerHTML < y.innerHTML) || (!ordenUltimaAtencionAscendente && x.innerHTML > y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+              }
+          }
+          if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+          }
+      }
+  }
+</script>
+<script>
+/* var ordenSeAtendioAscendente = true; // Por defecto, se ordena por ¿Se atendió? de forma ascendente
+
+
+// Script para ordenar la tabla por ¿Se atendió? al hacer clic en el encabezado
+document.getElementById("th-se-atendio").addEventListener("click", function() {
+    // Cambiar el tipo de ordenamiento
+    ordenSeAtendioAscendente = !ordenSeAtendioAscendente;
+    
+    // Llamar a la función de ordenamiento
+    sortTableBySeAtendio();
+});
+
+// Función para ordenar la tabla por ¿Se atendió?
+function sortTableBySeAtendio() {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("tbody-paciente");
+    switching = true;
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 0; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("td")[12]; // Índice correspondiente a ¿Se atendió?
+            y = rows[i + 1].getElementsByTagName("td")[12]; // Índice correspondiente a ¿Se atendió?
+            // Comparar el valor de ¿Se atendió? para ordenar
+            var valueX = x.innerHTML.trim().toLowerCase();
+            var valueY = y.innerHTML.trim().toLowerCase();
+            if ((valueX === 'sí' && valueY === 'no') || (valueX < valueY)) {
+                shouldSwitch = true;
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+        }
+    }
+}*/
+
+</script>
+<script>
+  var ordenFechaLimpiezaAscendente = true; // Por defecto, se ordena por Fecha de Limpieza de forma ascendente
+
+  // Script para ordenar la tabla por Fecha de Limpieza al hacer clic en el encabezado
+  document.getElementById("th-fecha-limpieza").addEventListener("click", function () {
+      // Cambiar el tipo de ordenamiento
+      ordenFechaLimpiezaAscendente = !ordenFechaLimpiezaAscendente;
+      // Llamar a la función de ordenamiento
+      sortTableByFechaLimpieza();
+  });
+
+  // Función para ordenar la tabla por Fecha de Limpieza
+  function sortTableByFechaLimpieza() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("tbody-paciente");
+      switching = true;
+      while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 0; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("td")[11]; // Índice correspondiente a Fecha de Limpieza
+              y = rows[i + 1].getElementsByTagName("td")[11]; // Índice correspondiente a Fecha de Limpieza
+              // Comparar las fechas para ordenar
+              if ((ordenFechaLimpiezaAscendente && x.innerHTML > y.innerHTML) || (!ordenFechaLimpiezaAscendente && x.innerHTML < y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+              }
+          }
+          if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+          }
+      }
+  }
+</script>
+<script>
+  // Obtener el elemento input
+  var inputDni = document.getElementById('txtDni');
+
+  // Escuchar el evento de input para verificar la longitud del valor
+  inputDni.addEventListener('input', function() {
+      // Limitar la longitud máxima a 8 caracteres
+      if (this.value.length > 9) {
+          this.value = this.value.slice(0, 9); // Cortar el valor a 8 caracteres
+      }
+  });
+  var inputTelefono = document.getElementById('txtTelefono');
+
+  // Escuchar el evento de input para verificar la longitud del valor
+  inputTelefono.addEventListener('input', function() {
+      // Limitar la longitud máxima a 8 caracteres
+      if (this.value.length > 9) {
+          this.value = this.value.slice(0, 9); // Cortar el valor a 8 caracteres
+      }
+  });
+  var inputDniActualizar = document.getElementById('txtDniActualizar');
+
+  // Escuchar el evento de input para verificar la longitud del valor
+  inputDniActualizar.addEventListener('input', function() {
+      // Limitar la longitud máxima a 8 caracteres
+      if (this.value.length > 9) {
+          this.value = this.value.slice(0, 9); // Cortar el valor a 8 caracteres
+      }
+  });
+  var inputTelefonoActualizar = document.getElementById('txtTelefonoActualizar');
+
+  // Escuchar el evento de input para verificar la longitud del valor
+  inputTelefonoActualizar.addEventListener('input', function() {
+      // Limitar la longitud máxima a 8 caracteres
+      if (this.value.length > 13) {
+          this.value = this.value.slice(0, 13); // Cortar el valor a 8 caracteres
+      }
+  });
+
+</script>
+  
+</body>
+</html>
+

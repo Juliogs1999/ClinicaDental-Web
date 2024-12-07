@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Formulario de Presupuesto</title>
+    <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.1/dist/css/select2.min.css" rel="stylesheet" />-->
+    
+
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  
+  <div class="container">
+   <img src="img-costo/costo.png" alt="" style="width: 100%; height: auto;">
+  
+    <a class="btn text-white" style="background-color: #212F5B;" href="usuario.html"><i class="bi bi-calendar-date"></i> <strong>Calendario</strong></a>
+  
+   &nbsp;
+    <a class="btn btn-warning" style="color: #212F5B;" href="registropac.html"><i class="bi bi-calendar-date"></i> <strong>Pacientes</strong></a>
+  
+    
+  </div>
+  
+ 
+      
+        
+       
+  <div class="container pt-5  letra-roboto" >
+    <div class="row justify-content-evenly">
+      <div class="col-md-2 col-4"><img src="img/conta-azul.png" class="img-fluid" alt="" style="height: 100%;"></div>
+      <div class="col-md-10 col-8">
+        <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color">Pac<u>ien</u>te</span></h1>
+        <br>
+        <form action=""> <div class="col-md-6 col-12">
+  
+          <label for="txtCodigoPac" class="form-label"></label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="txtCodigoPac" placeholder="Historia Clinica">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-warning"></i>
+              </span>
+              
+          </div>
+
+        </div>
+        <br>
+        <div class="d-grid col-4 mx-auto">
+          <button class="btn btn-warning btn-azul" type="button" id="btnAgregarPaciente"><strong>Agregar</strong></button>
+          
+        </div>
+      </form>
+        <form class="row" action="http://localhost/serviciosmiley/costo/servicio-costover.php" method="post">
+          <!--<div class="col-md-6 col-12">
+  
+            <label for="txtNombreApellido" class="form-label"></label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="txtNombreApellido" placeholder="Historia Clinica">
+                <span class="input-group-text">
+                  <i class="bi bi-person-fill text-warning"></i>
+                </span>
+                
+            </div>
+  
+          </div>-->
+
+          <!--<div class="col-md-6 col-12 pt-4">
+            <select class="form-select" aria-label="Default select example" id="txtSede">
+              <option selected disabled value="">Sede Atendida</option>
+              <option value="Los Olivos - Lima">Los Olivos - Lima</option>
+              <option value="Miraflores - Lima">Miraflores - Lima</option>
+             
+              
+            </select>
+          </div>-->
+
+          <div class="col-md-6 col-12 pt-3 pb-3">
+  
+            <label for="txtFecha" class="form-label">&nbsp;&nbsp;&nbsp;<strong>Fecha Atendida</strong></label>
+            <input type="date" class="form-control" id="txtFecha">
+          </div>
+  
+          
+          <div class="col-md-6 col-12 pt-5">
+            <select class="form-select" aria-label="Default select example" id="txtEspecialidad" >
+              <option selected disabled value="">Especialidad</option>
+              <option value="Consulta General">Consulta General</option>
+              <option value="Ortodoncia">Ortodoncia</option>
+              <option value="Odontopediatria">Odontopediatria</option>
+              <option value="Implantologia">Implantologia</option>
+              <option value="Endodoncia">Endodoncia</option>        
+              <option value="Rehabilitacion Oral">Rehabilitacion Oral</option>
+              <option value="Estetica Dental y Restauradora">Estetica Dental y Restauradora</option>
+              <option value="Cirugia Bucal">Cirugia Bucal</option>
+          
+              
+            </select>
+          </div>
+          <div class="col-md-12 col-12 pt-3 pb-3">
+            <select class="form-select" aria-label="Default select example" id="txtDoctor" >
+              <option selected disabled value="">Doctor</option>
+              <option value="Dr. Jhon Zelada">Dr. Jhon Zelada</option>
+              <option value="Dra. Alejandra Noriega">Dra. Alejandra Noriega</option>
+              <option value="Dr. Angel Granda">Dr. Angel Granda</option>
+              <option value="Dra. Madelyn Placido">Dra. Madelyn Placido</option>  
+              <option value="Dra. Carol Vasquez">Dra. Carol Vasquez</option>          
+              <option value="Dra. Azul Araucano">Dra. Azul Araucano</option>
+              <option value="Dr. Hans Gamarra">Dr. Hans Gamarra</option>
+              <option value="Dra. Rosario Araujo">Dra. Rosario Araujo</option>    
+          
+              
+            </select>
+          </div>
+        
+          
+          
+          
+          <div class="d-grid col-4 mx-auto">
+            <button class="btn btn-warning btn-azul" type="button" id="btnAgregarCosto"><strong>Registrar</strong></button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!--REGISTROSSSSSS DE TRATAMIENTO-->    
+
+<div class="container pb-1 letra-roboto" >
+  <div class="row justify-content-evenly">
+    <div class="col-md-2 col-4"><img src="img/conta-azul.png" class="img-fluid" alt="" style="height: 100%;"></div>
+    <div class="col-md-10 col-8">
+      <h1 class="fw-bolder fs-1 text-center">Registro de <span class="c-color">Tra<u>tamie</u>nto</span></h1>
+      
+      
+      <form class="row" action="http://localhost/serviciosmiley/costo/servicio-preciover.php" method="post">
+        <div class="col-md-3 col-12">
+
+          <label for="txtCantidad" class="form-label"></label>
+          <div class="input-group">
+              <input type="number" class="form-control" id="txtCantidad" placeholder="Cantidad Tratamiento">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-warning"></i>
+              </span>
+              
+          </div>
+
+        </div>
+
+        
+        <div class="col-md-4 col-12 pt-4">
+          <input class="form-control" list="datalistOptions" id="txtDescripcion" placeholder="Busca tratamiento" >
+            <datalist id="datalistOptions">
+              
+              <option value="Blanqueamiento Ambulatorio">Blanqueamiento Ambulatorio ($/. 350.00)</option>
+              <option value="Blanqueamiento Consultorio">Blanqueamiento Consultorio hasta 2 sesiones($/. 450.00)</option>
+              <option value="Blanqueamiento Consultorio Adicional">Blanqueamiento Consultorio Adicional ($/. 120.00)</option>
+              <option value="Blanqueamiento Mixto">Blanqueamiento Mixto ($/. 550.00)</option>
+              <option value="1ER Consulta">1ER Consulta ($/. 30.00)</option>
+              <option value="Consulta">Consulta ($. 30.00)</option>
+              <option value="Coronas de Acetato">Coronas de Acetato ($/. 180.00)</option>
+              <option value="Carillas x Diente con Resina">Carillas x Diente con Resina ($/. 280.00)</option>
+              <option value="Corona de Zirconio (C/U)">Corona de Zirconio (C/U) ($/. 850.00)</option>
+              <option value="Corona Metal Porcelana (C/U)">Corona Metal Porcelana (C/U) ($/. 650.00)</option>
+              <option value="Cocteles c/u">Cocteles c/u ($/. 60.00)</option>
+              <option value="Control">Control ($/. 180.00)</option>
+              <option value="Destartraje">Destartraje ($/. 90.00)</option>
+              <option value="Destartraje + Profilaxis + Fluor">Destartraje + Profilaxis + Fluor ($/. 120.00)</option>
+              <option value="Drenaje o limpieza de pus">Drenaje o limpieza de pus ($/. 150.00)</option>
+              <option value="Extraccion">Extraccion ($/. 100.00)</option>
+              <option value="Endodoncia Molares o Posterior">Endodoncia Molares o Posterior ($/. 450.00)</option>
+              <option value="Endodoncia Anteriores">Endodoncia Anteriores ($/. 380.00)</option>
+              <option value="Exodoncia Anteriores (Simples)">Exodoncia Anteriores (Simples) ($/. 100.00)</option>
+              <option value="Exodoncia Anteriores (Semicomplejas)">Exodoncia Anteriores (Semicomplejas) ($/. 150.00)</option>
+              <option value="Exodoncia Posteriores (Simple)">Exodoncia Posteriores (Simple) ($/. 150.00)</option>
+              <option value="Exodoncia Posteriores (Semicompleja)">Exodoncia Posteriores (Semicompleja) ($/. 250.00)</option>
+              <option value="Exodoncia Terceras SUP">Exodoncia Terceras SUP ($/. 220.00)</option>
+              <option value="Exodoncia Terceras INF">Exodoncia Terceras INF ($/. 450.00)</option>
+              <option value="Fluor Barniz">Fluor Barniz ($/. 90.00)</option>
+              <option value="Gingivectomia x Arcada">Gingivectomia x Arcada ($/. 450.00)</option>
+              <option value="Incrustacion">Incrustacion ($/. 320.00)</option>
+              <option value="Operculectomia">Operculectomia ($/. 120.00)</option>
+              <option value="Perno Fibra de Vidrio">Perno Fibra de Vidrio ($/. 200.00)</option>
+              <option value="Pegada de Brackets">Pegada de Brackets ($/. 70.00)</option>
+              <option value="Pegada de Tubo">Pegada de Tubo ($/. 90.00)</option>
+              <option value="Placa">Placa ($/. 28.00)</option>
+              <option value="Profilaxis">Profilaxis ($/. 100.00)</option>
+              <option value="Protesis Total Completa (SUP/INF)">Protesis Total Completa (SUP/INF) ($/. 1700.00)</option>
+              <option value="Protesis Total SUP">Protesis Total SUP ($/. 950.00)</option>
+              <option value="Protesis Total INF">Protesis Total INF ($/. 950.00)</option>
+              <option value="Protesis Flexible (C/U)">Protesis Flexible (C/U) ($/. 1600.00)</option>
+              <option value="Protesis Flexible (1-3 piezas)">Protesis Flexible (1-3 piezas) ($/. 600.00)</option>
+              <option value="Protesis Base Metalica">Protesis Base Metalica ($/. 1400.00)</option>
+              <option value="Protesis Wipla">Protesis Wipla ($/. 620.00)</option>
+              <option value="Pulpotomia"> ($/. 320.00)</option>
+              <option value="Pulpectomia o Brix-Pulpo">Pulpectomia o Brix-Pulpo ($/. 320.00)</option>
+              <option value="Radiografia">Radiografia ($/. 30.00)</option>
+              <option value="Restauraciones">Restauraciones ($/. 75.00)</option>
+              <option value="Restauraciones + Medicacion">Restauraciones con Medicacion ($/. 185.00)</option>
+              <option value="Retratamiento Molares">Retratamiento Molares ($/. 490.00)</option>
+              <option value="Retratamiento Anterior">Retratamiento Anterior ($/. 420.00)</option>
+              <option value="Restauracion">Restauracion ($/. 90.00)</option>
+              <option value="Restauracion + Medicacion">Restauracion + Medicacion ($/. 180.00)</option>
+              <option value="Restauracion con Brix 3K">Restauracion con Brix 3K ($/. 150.00)</option>
+              <option value="Restauracion con Rivastar">Restauracion con Rivastar ($/. 120.00)</option>
+              <option value="Sellantes">Sellantes ($/. 80.00)</option>
+              
+            </datalist>
+          
+          
+        </div>
+        
+        
+        <div class="col-md-3 col-12">
+
+          <label for="txtPrecioU" class="form-label"></label>
+          <div class="input-group">
+              <input type="number" class="form-control" id="txtPrecioU" placeholder="Precio(S/. )">
+              <span class="input-group-text">
+                <i class="bi bi-cash-coin text-warning"></i>
+              </span>
+              
+          </div>
+
+        </div>
+        
+
+        <div class="col-md-1 col-12 pb-3" style="display: none;">
+          <label for="txtPrecioTotal" class="form-label"></label>
+          <div class="input-group">
+              <input type="number" class="form-control" id="txtPrecioTotal" name="preciot" placeholder="Precio Total" readonly>
+              <span class="input-group-text">
+                <i class="bi bi-cash-coin text-warning"></i>
+              </span>
+          </div>
+      </div>
+<div class="col-md-2 col-12 pt-3">
+        <select class="form-select" aria-label="Default select example" id="selectorMoneda">
+          <option value="soles" selected>Soles</option>
+          <option value="dolares">Dólares</option>
+      </select>
+</div>
+      
+      <div class="d-grid col-4 mx-auto mt-3">
+        <button class="btn btn-warning btn-azul" type="button" id="btnAgregarPrecio"><strong>Guardar</strong></button>
+        
+      </div>
+      
+      
+        
+        
+        
+      </form>
+
+      <form>
+        <div class="col-md-3 col-12 pb-2">
+          <label for="txtDescuento" class="form-label"></label>
+          <div class="input-group">
+              <input type="number" class="form-control" id="txtDescuento" placeholder="Descuento(S/. )(Opcional)">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-warning"></i>
+              </span>
+              
+          </div>
+      </div>
+      <div class="col-md-2 col-12">
+        <button class="btn btn-danger btn-azul" type="button" id="btnDescuento"><strong>Aplicar Descuento</strong></button>
+       
+        
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+      
+      
+      
+      
+      
+<div class="contenido">
+  <div class="container-fuid">
+  <!-- Otro contenido de tu página -->
+  
+
+  <div class="">
+  <img src="img-costo/costo.png" alt="" class="img-fluid" style="width: 100%; height: auto;">
+  <!--<a class="btn btn-warning" href="costo-formulario.html">Formulario</a>-->
+  </div>
+
+
+<div class="container-fluid pt-5 letra-oswald700">
+  <div class="row">
+      <div class="col-2 text-end">
+          <img src="img-costo/tablamedica.jpg" class="img-fluid" style="height: 84%; width: auto;" alt="">
+      </div>
+      <div class="col-10">
+          <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th style="width: 30%; font-size: 0.7em;">NOMBRE Y APELLIDO</th>
+                          <th style="width: 31%; font-size: 0.7em;">SEDE</th>
+                          <th style="width: 39%; font-size: 0.7em;">HISTORIA CLINICA</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody-costo">
+                      <!-- Aquí irán los datos de los pacientes -->
+                  </tbody>
+              </table>
+          </div>
+          <div class="table-responsive" >
+              <table class="table" style="margin-top: -10px;">
+                  <thead>
+                      <tr>
+                          <th style="width: 30%; font-size: 0.7em; padding-top: 6px;">FECHA DE ELABORACION</th>
+                          <th style="width: 31%; font-size: 0.7em; padding-top: 6px;">ESPECIALIDAD</th>
+                          <th style="width: 38%; font-size: 0.7em; padding-top: 6px;">DOCTOR</th>
+                          <th style="width: 1%;"></th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody-costo2">
+                      <!-- Aquí irán los datos de los pacientes -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+      <h2 class="c-color2 letra-bold700-italic">TRATAMIENTO ODONTOLOGICO INTEGRAL</h2>
+  </div>
+  <table class="table table-responsive">
+      <thead>
+          <tr class="sticky-top letra-roboto500-italic">
+              <th class="text-white text-center" style="background-color: #052a99; font-size: 0.8em; padding: 7px; ">CANTIDAD</th>
+              <th class="text-white" style="background-color: #052a99; font-size: 0.8em; padding: 7px; ">DESCRIPCION DEL TRATAMIENTO</th>
+              <th class="text-white text-center" style="background-color: #052a99; font-size: 0.8em; padding: 7px;">SUB TOTAL</th>
+              <th class="text-white text-center" style="background-color: #052a99;  font-size: 0.8em; padding: 7px;">TOTAL</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody id="tbody-precio">
+      </tbody>
+  </table>
+</div>
+<div class="container">
+         
+            <div class="row">
+                <div class="col-md-6 col-6" style="margin-top: -100px;">
+                    <img src="img-costo/numero-cuenta.png" class="img-fluid" style="width: 80%; height: auto;">
+                </div>
+                <div class="col-md-6 col-6">
+                    <img src="img-costo/firma-jhon.png" class="img-fluid" style="width: 90%; height: auto;">
+                </div>
+            </div>
+          
+
+          <div class="pb-2" style="margin-top: -20px;">
+            <img src="img-costo/pagoss.png" class="img-fluid" style="width: 20%; height: auto;">
+          </div>
+
+        </div>
+</div>
+
+<footer >
+  <img src="img-costo/precio-footer.png" alt="" style="width: 100%; height: auto;">
+</footer>
+</div>
+<div class="container pt-2 ">
+  <button id="btnLimpiarTratamientos" onclick="obtenerNombreApellidoYDescargarPDF()">Descargar PDF</button>
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script>
+ function obtenerNombreApellidoYDescargarPDF() {
+    // Realizar una solicitud AJAX para obtener los datos del archivo PHP
+    $.ajax({
+        url: 'http://localhost/serviciosmiley/costo/servicio-costover.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            // Suponiendo que data es un arreglo con los resultados
+            if (data.length > 0) {
+              var nombreCompleto = $("#tbody-costo tr:first-child td:first-child").text().trim(); // Obtener nombre completo y eliminar espacios en blanco al inicio y final
+
+            // Dividir el nombre completo por espacios
+            var palabras = nombreCompleto.split(' ');
+
+            var nombre = palabras[0]; // Tomar la primera palabra como nombre
+
+            var apellido = ''; // Inicializar el apellido como vacío
+            if (palabras.length > 1) {
+                apellido = palabras.slice(1).join(' '); // Tomar el resto como apellido
+            }
+
+            var fecha = formatDate(data[0].FechaCli); // Formatear la fecha
+
+                descargarPDF(nombre, apellido, fecha);
+            } else {
+                console.error('No se encontraron datos en la respuesta.');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al obtener los datos:', error);
+        }
+    });
+}
+
+function formatDate(dateString) {
+    // Verificar si la cadena de fecha es nula o vacía
+    if (!dateString || dateString.trim() === "" || !/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+        return "dd/mm/aaaa"; // Devuelve "dd/mm/aaaa" si la cadena de fecha no es válida
+    }
+
+    // Dividir la cadena de fecha para obtener día, mes y año
+    var parts = dateString.split('-');
+
+    // Crear un nuevo objeto Date con los componentes de fecha obtenidos
+    var date = new Date(parts[0], parts[1] - 1, parts[2]);
+
+    // Validar si la fecha es válida
+    if (isNaN(date.getTime()) || date.getFullYear() < 2000) {
+        return "dd/mm/aaaa"; // Devuelve "dd/mm/aaaa" si la fecha es inválida
+    }
+
+    // Obtener el día del mes
+    var day = String(date.getDate());
+
+    // Obtener el nombre del mes en español
+    var monthNames = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+        "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"];
+    var monthIndex = date.getMonth();
+    var month = monthNames[monthIndex];
+
+    // Obtener el año
+    var year = date.getFullYear();
+
+    // Formatear la fecha como "d mes año"
+    return day + ' ' + month + ' ' + year;
+}
+
+function descargarPDF(nombre, apellido, fecha) {
+  var nombreArchivo = 'PRESUPUESTO-' + nombre + apellido + '-' + fecha;
+    nombreArchivo = nombreArchivo.replace(/\s/g, '');
+    var element = document.querySelector('.contenido'); // Selecciona el elemento que deseas convertir a PDF
+    var opt = {
+        margin: 0,
+        filename: nombreArchivo + '.pdf', // Nombre del archivo basado en el valor de NombreApellido
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { scale: 3 },
+        jsPDF: { 
+            unit: 'in',
+            format: 'letter',  // Utiliza el formato de carta 'letter'
+            orientation: 'portrait',  // Orientación vertical
+            compressPDF: true // Comprimir el PDF
+        },
+        pagebreak: { mode: 'avoid-all' }, // Evitará que el contenido se divida en varias páginas
+        html2pdf: { width: element.offsetWidth, height: element.offsetHeight } // Tamaño del PDF igual al tamaño del div .contenido
+    };
+    html2pdf().from(element).set(opt).save();
+}
+
+
+</script>
+
+
+    
+
+
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.1/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- CDN de Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+    <script src="js/costo.js"></script>
+    <script src="js/precio.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
