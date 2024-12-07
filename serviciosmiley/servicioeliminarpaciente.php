@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: *');
-    $cn = mysqli_connect("localhost","root","","baseclinica");
+   $cn = mysqli_connect("localhost","root","","baseclinica");
     $IdReserva = $_POST['IdReserva'];
 
 // Obtener el DniPaciente relacionado con la reserva
